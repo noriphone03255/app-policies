@@ -54,14 +54,14 @@
 <header>
   <p class="kicker">Ropod</p>
   <h1>プライバシーポリシー</h1>
-  <p class="updated">最終更新日：2026年6月23日</p>
+  <p class="updated">最終更新日：2026年7月5日</p>
 </header>
 
 <p class="lang-note">This Privacy Policy is provided in Japanese first, followed by an English translation below. / 日本語の本文の下に、英語版を掲載しています。</p>
 
 <section>
-  <p>本プライバシーポリシーは、Ropod（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。本アプリは、利用者が作成した台本の音声化およびAIによる文章生成補助を提供するアプリです。</p>
-  <p><strong>要点：本アプリは、氏名・メールアドレス・電話番号・位置情報などの個人を特定する情報を収集しません。アカウント登録は不要です。利用者が入力したテキストや生成した音声を、当社のサーバーに保存することはありません。</strong></p>
+  <p>本プライバシーポリシーは、Ropod（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。本アプリは、利用者が作成したテキストの音声化およびAIによる文章生成補助を提供するアプリです。</p>
+  <p><strong>要点：本アプリは、氏名・メールアドレス・電話番号・位置情報などの個人を特定する情報を収集しません。アカウント登録は不要です。作成したテキストと生成した音声は、原則としてお使いの端末内に保存されます。音声化の処理中に限り、テキストと生成中の音声パーツを当社サーバーに一時的に保存しますが、処理用ファイルは約1日で自動的に削除されます。</strong></p>
 </section>
 
 <section>
@@ -69,20 +69,30 @@
   <p>本アプリは、以下の情報を<strong>収集しません</strong>。</p>
   <ul>
     <li>氏名、メールアドレス、電話番号、住所などの個人を特定する情報</li>
-    <li>位置情報、連絡先、写真ライブラリ</li>
+    <li>位置情報、連絡先</li>
     <li>広告識別子（IDFA）。本アプリはトラッキングを行わないため、トラッキング許可（ATT）の確認も表示しません。</li>
     <li>第三者の解析・トラッキング・広告SDK（本アプリには一切組み込まれていません）</li>
   </ul>
+  <p class="muted">※ 本の表紙に写真を使う場合のみ、読み取り専用で写真ライブラリにアクセスします。選んだ写真は端末内にのみコピーされ、当社サーバーへアップロードすることはありません（下記02を参照）。</p>
 </section>
 
 <section>
   <h2><span class="num">02</span>本アプリが扱う情報</h2>
 
-  <h3>台本テキスト</h3>
-  <p>利用者が作成した台本テキストは、<strong>お使いの端末内（ローカルデータベース）にのみ保存されます。</strong>音声化またはAI生成を実行したときに限り、その処理のために第三者のAPI（後述）へ送信されますが、<strong>当社のサーバーには保存されません。</strong></p>
+  <h3>テキスト（台本・取り込んだ資料）</h3>
+  <p>利用者が作成したテキストは、<strong>お使いの端末内（ローカルデータベース）に保存されます。</strong>音声化またはAI生成を実行したときに限り、その処理のために第三者のAPI（後述）へ送信されます。音声化の処理中は、テキストのかたまりと生成中の音声パーツを当社サーバー（Cloudflare R2）に<strong>一時的に保存</strong>します（長い処理の再開や、アプリを閉じても処理を続けるため）。これらの処理用ファイルは<strong>約1日で自動的に削除</strong>されます。完成した音声は端末にダウンロードされ、その後の再生はローカルで行われます。</p>
+
+  <h3>ファイル取り込み</h3>
+  <p>手持ちのファイルを取り込めます。<strong>.txt / .md は端末内で処理します。</strong> <strong>.pdf / .docx / .epub は、テキストを抽出する目的に限り当社サーバーへ送信</strong>し、抽出後に元ファイルは保持しません。</p>
 
   <h3>生成された音声</h3>
-  <p>音声化によって生成された音声ファイルは、<strong>お使いの端末内にのみ保存されます。</strong>当社のサーバーにアップロード・保存されることはありません。</p>
+  <p>音声化によって生成された音声ファイルは、<strong>お使いの端末内に保存されます。</strong>再生はオフラインでも可能です（通信が発生するのは生成時のみ）。</p>
+
+  <h3>通知</h3>
+  <p>通知を許可した場合、<strong>Expoのプッシュトークン</strong>を当社サーバーに登録します。これは「音声ができたよ」の通知にのみ使用します。拒否しても全機能を利用できます（次にアプリを開いたときに音声をダウンロードします）。</p>
+
+  <h3>表紙写真</h3>
+  <p>本の表紙に写真を選んだ場合、その写真は<strong>お使いの端末内にのみ</strong>コピーされます（読み取り専用の写真アクセス）。当社サーバーへアップロードすることはありません。</p>
 
   <h3>利用量と購入状態</h3>
   <p>本アプリは、サービスの提供と利用上限の管理のために、当社のサーバー（Cloudflare Worker）で以下の情報のみを扱います。</p>
@@ -90,7 +100,7 @@
     <li><strong>利用量の数値</strong>（音声化した文字数など、数のみ）</li>
     <li><strong>購入状態のフラグ</strong>（有料プランに加入しているか否か）</li>
   </ul>
-  <p>これらは端末ごとに自動生成される<strong>匿名のID</strong>に紐づけて記録され、個人を特定する情報は含みません。記録は一定期間（最大50日）で自動的に失効します。台本の本文・音声・個人情報は、当社サーバーには一切保存されません。</p>
+  <p>これらは端末ごとに自動生成される<strong>匿名のID</strong>に紐づけて記録され、個人を特定する情報は含みません。記録は一定期間（最大50日）で自動的に失効します。テキストの本文・完成した音声・個人情報を、当社サーバーに継続的に保存することはありません。</p>
 </section>
 
 <section>
@@ -98,18 +108,20 @@
   <p>本アプリは、機能の提供のために、以下の第三者サービスへ必要なデータを送信します。各社のプライバシーポリシーが適用されます。</p>
   <table>
     <tr><th>送信先</th><th>送信する内容</th><th>目的</th></tr>
-    <tr><td>Google（Gemini API）</td><td>入力テキスト</td><td>AIによる文章生成補助</td></tr>
+    <tr><td>Google（Gemini API）</td><td>入力テキスト</td><td>AIによる文章生成補助・整形</td></tr>
     <tr><td>Inworld</td><td>音声化するテキスト</td><td>音声合成（読み上げ）</td></tr>
     <tr><td>RevenueCat</td><td>匿名ID</td><td>有料プランの加入状態の確認</td></tr>
     <tr><td>Apple</td><td>購入処理</td><td>App内課金の決済（支払い情報は当社・本アプリでは受け取りません）</td></tr>
-    <tr><td>Cloudflare</td><td>通信の中継</td><td>APIキーの保護および利用量の管理</td></tr>
+    <tr><td>Cloudflare</td><td>通信の中継・処理用ファイルの一時保存</td><td>APIキーの保護、利用量の管理、音声化の処理</td></tr>
+    <tr><td>Expo</td><td>プッシュトークン</td><td>音声化完了の通知配信</td></tr>
   </table>
   <p class="muted">各社のプライバシーポリシー：
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>・
     <a href="https://inworld.ai/privacy-policy" target="_blank" rel="noopener">Inworld</a>・
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>・
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>・
-    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>・
+    <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a>
   </p>
 </section>
 
@@ -125,7 +137,7 @@
 
 <section>
   <h2><span class="num">06</span>データの削除</h2>
-  <p>台本テキストおよび生成音声は端末内に保存されているため、<strong>本アプリを削除（アンインストール）することで、これらのデータはすべて削除されます。</strong>当社サーバー上の利用量・購入状態の記録は、匿名IDに紐づき一定期間で自動失効します。</p>
+  <p>テキストおよび生成音声は端末内に保存されているため、<strong>本アプリを削除（アンインストール）することで、これらのデータはすべて削除されます。</strong>音声化の処理中に当社サーバーへ一時保存される処理用ファイルは約1日で自動的に削除されます。当社サーバー上の利用量・購入状態の記録は、匿名IDに紐づき一定期間で自動失効します。</p>
 </section>
 
 <section>
@@ -150,12 +162,12 @@
 <header>
   <p class="kicker">Ropod</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: June 23, 2026</p>
+  <p class="updated">Last updated: July 5, 2026</p>
 </header>
 
 <section>
-  <p>This Privacy Policy explains how Ropod ("the App") handles your information. The App lets you turn scripts you write into spoken audio and provides AI-assisted writing help.</p>
-  <p><strong>In short: the App does not collect personally identifying information such as your name, email, phone number, or location. No account or sign-in is required. The text you enter and the audio you generate are never stored on our servers.</strong></p>
+  <p>This Privacy Policy explains how Ropod ("the App") handles your information. The App lets you turn text you write into spoken audio and provides AI-assisted writing help.</p>
+  <p><strong>In short: the App does not collect personally identifying information such as your name, email, phone number, or location. No account or sign-in is required. The text you write and the audio you generate are stored on your device. Only while an audio job is running are some text and audio parts temporarily stored on our servers, and those job files are automatically deleted after about one day.</strong></p>
 </section>
 
 <section>
@@ -163,20 +175,30 @@
   <p>The App does <strong>not</strong> collect:</p>
   <ul>
     <li>Personally identifying information (name, email, phone number, address)</li>
-    <li>Location, contacts, or photo library</li>
+    <li>Location or contacts</li>
     <li>Advertising identifiers (IDFA). Because the App does not track you, it does not show an App Tracking Transparency (ATT) prompt.</li>
     <li>Any third-party analytics, tracking, or advertising SDKs (none are included in the App)</li>
   </ul>
+  <p class="muted">Note: The App accesses your photo library (read-only) only when you choose a photo as a book cover. The chosen photo is copied only on your device and is never uploaded to our servers (see 02 below).</p>
 </section>
 
 <section>
   <h2><span class="num">02</span>Information the App Handles</h2>
 
-  <h3>Script text</h3>
-  <p>The scripts you write are stored <strong>only on your device</strong> (in a local database). Only when you generate audio or use AI assistance is that text sent to the third-party APIs described below for processing — but it is <strong>never stored on our servers.</strong></p>
+  <h3>Text (scripts and imported documents)</h3>
+  <p>The text you write is stored <strong>on your device</strong> (in a local database). Only when you generate audio or use AI assistance is that text sent to the third-party APIs described below for processing. While an audio job is running, text chunks and in-progress audio parts are <strong>temporarily stored</strong> on our server (Cloudflare R2) so long jobs can resume and continue even if you close the app. These job files are <strong>automatically deleted after about one day</strong>. The finished audio is downloaded to your device, after which playback is local.</p>
+
+  <h3>File import</h3>
+  <p>You can import your own files. <strong>.txt and .md are processed on your device.</strong> <strong>.pdf, .docx, and .epub are sent to our server only to extract their text</strong>; the uploaded file itself is not retained after extraction.</p>
 
   <h3>Generated audio</h3>
-  <p>Audio files created by the App are stored <strong>only on your device.</strong> They are never uploaded to or stored on our servers.</p>
+  <p>Audio files created by the App are stored <strong>on your device.</strong> Playback works offline (the network is used only when generating).</p>
+
+  <h3>Notifications</h3>
+  <p>If you allow notifications, we register an <strong>Expo push token</strong> with our server, used only to tell you when your audio is ready. If you decline, all features still work (the app downloads your audio when you next open it).</p>
+
+  <h3>Cover photos</h3>
+  <p>If you choose a photo as a book cover, it is copied <strong>only on your device</strong> (read-only photo access). Cover photos are never uploaded to our servers.</p>
 
   <h3>Usage and purchase status</h3>
   <p>To provide the service and enforce usage limits, our server (a Cloudflare Worker) handles only:</p>
@@ -184,7 +206,7 @@
     <li><strong>Usage counts</strong> (such as the number of characters synthesized — numbers only)</li>
     <li><strong>A purchase-status flag</strong> (whether you have an active paid plan)</li>
   </ul>
-  <p>These are tied to an <strong>anonymous ID</strong> generated on your device and contain no personally identifying information. The records expire automatically after a limited period (up to 50 days). Your script text, audio, and personal information are never stored on our servers.</p>
+  <p>These are tied to an <strong>anonymous ID</strong> generated on your device and contain no personally identifying information. The records expire automatically after a limited period (up to 50 days). Your text, finished audio, and personal information are not stored on our servers on an ongoing basis.</p>
 </section>
 
 <section>
@@ -192,18 +214,20 @@
   <p>To provide its features, the App sends the necessary data to the following third-party services, each governed by its own privacy policy:</p>
   <table>
     <tr><th>Recipient</th><th>Data sent</th><th>Purpose</th></tr>
-    <tr><td>Google (Gemini API)</td><td>Input text</td><td>AI-assisted writing</td></tr>
+    <tr><td>Google (Gemini API)</td><td>Input text</td><td>AI-assisted writing and text preparation</td></tr>
     <tr><td>Inworld</td><td>Text to be synthesized</td><td>Text-to-speech</td></tr>
     <tr><td>RevenueCat</td><td>Anonymous ID</td><td>Checking paid-plan status</td></tr>
     <tr><td>Apple</td><td>Purchase processing</td><td>In-app purchases (we never receive payment details)</td></tr>
-    <tr><td>Cloudflare</td><td>Request relay</td><td>Protecting API keys and managing usage</td></tr>
+    <tr><td>Cloudflare</td><td>Request relay and temporary job storage</td><td>Protecting API keys, managing usage, and processing audio</td></tr>
+    <tr><td>Expo</td><td>Push token</td><td>Delivering the "audio is ready" notification</td></tr>
   </table>
   <p class="muted">Third-party privacy policies:
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>,
     <a href="https://inworld.ai/privacy-policy" target="_blank" rel="noopener">Inworld</a>,
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>,
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>,
-    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>,
+    <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a>
   </p>
 </section>
 
@@ -219,7 +243,7 @@
 
 <section>
   <h2><span class="num">06</span>Deleting Your Data</h2>
-  <p>Because script text and generated audio are stored on your device, <strong>deleting (uninstalling) the App removes all of that data.</strong> Usage and purchase-status records on our server are tied to an anonymous ID and expire automatically after a limited period.</p>
+  <p>Because text and generated audio are stored on your device, <strong>deleting (uninstalling) the App removes all of that data.</strong> Any job files temporarily stored on our server during an audio job are automatically deleted after about one day. Usage and purchase-status records on our server are tied to an anonymous ID and expire automatically after a limited period.</p>
 </section>
 
 <section>
