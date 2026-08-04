@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>プライバシーポリシー | Metafolia</title>
+<title>Privacy Policy | Metafolia</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
          line-height: 1.8; color: #4a3b30; background: #fdf8ef; max-width: 720px; margin: 0 auto; padding: 36px 20px 72px; }
@@ -15,44 +15,28 @@
   code { background: #f3ecdd; padding: 1px 6px; border-radius: 4px; }
   hr { border: none; border-top: 1px solid #e7ddca; margin: 3em 0; }
   a { color: #b06a2c; }
+
+  .langtabs { display: flex; gap: 8px; margin: 0 0 28px; }
+  .langtabs button { font: inherit; font-size: 0.92rem; color: #8a7c6d; background: #f3ecdd;
+                     border: 1px solid #e7ddca; border-radius: 999px; padding: 7px 18px; cursor: pointer; }
+  .langtabs button[aria-selected="true"] { background: #b06a2c; border-color: #b06a2c; color: #fff; }
+  /* Both languages are visible until the script runs, so the document stays complete
+     with JavaScript switched off — it is a legal notice before it is a web page. */
+  html.js .lang { display: none; }
+  html.js .lang.active { display: block; }
+  .lang + .lang { border-top: 1px solid #e7ddca; margin-top: 3em; padding-top: 1em; }
+  html.js .lang + .lang { border-top: none; margin-top: 0; padding-top: 0; }
 </style>
 </head>
 <body>
+<script>document.documentElement.className = "js";</script>
 
-<h1>プライバシーポリシー</h1>
-<p class="muted">アプリ「メタフォーリア（Metafolia）」／最終更新: 2026年8月4日</p>
+<nav class="langtabs" role="tablist">
+  <button type="button" role="tab" data-lang="en" aria-selected="true">English</button>
+  <button type="button" role="tab" data-lang="ja" aria-selected="false">日本語</button>
+</nav>
 
-<p>「メタフォーリア」（以下「本アプリ」）は、塊根植物を3Dで眺めて育てる、<strong>完全オフライン</strong>のアプリです。本アプリは、利用者のプライバシーを最優先に、<strong>個人情報を一切収集しない</strong>設計になっています。</p>
-
-<h2>収集する情報</h2>
-<p><strong>何も収集しません。</strong>本アプリはインターネットに接続せず、サーバーを持たず、アカウント登録も不要です。利用者の情報が端末の外に送信されることはありません。</p>
-
-<h2>端末内に保存される情報</h2>
-<p>次の情報は、利用者の端末内にのみ保存されます。当方はこれらにアクセスできません。</p>
-<ul>
-  <li>表示言語の設定（日本語／英語）</li>
-  <li>各株の育成を始めた日時</li>
-  <li>苗が届く配達スケジュールを開始した日時</li>
-</ul>
-<p>いずれも日時と設定値のみで、氏名・メールアドレス・端末の識別子などは含みません。これらはアプリを削除すると消去されます。</p>
-
-<h2>カメラ・マイク・写真・位置情報について</h2>
-<p>本アプリは、カメラ・マイク・写真ライブラリ・位置情報を<strong>一切使用しません</strong>。これらの許可を求めることもありません。</p>
-
-<h2>トラッキング・広告・第三者提供</h2>
-<p>本アプリは、トラッキング、広告、広告識別子（IDFA）、解析（アナリティクス）、外部SDKを<strong>一切使用しません</strong>。第三者に情報を提供・販売することもありません。</p>
-
-<h2>植物の成長について</h2>
-<p>本アプリの植物は、端末の時計を読んで実時間で成長します。読み取るのは<strong>現在の日時だけ</strong>で、利用状況の記録や送信は行いません。</p>
-
-<h2>ポリシーの変更</h2>
-<p>本ポリシーは必要に応じて変更されることがあります。変更した場合は、本ページにて更新します。</p>
-
-<h2>お問い合わせ</h2>
-<p><code>noriphone03255@gmail.com</code></p>
-
-<hr />
-
+<section class="lang" data-lang="en" lang="en">
 <h1 lang="en">Privacy Policy</h1>
 <p class="muted" lang="en">Metafolia — Last updated: August 4, 2026</p>
 
@@ -84,6 +68,64 @@
 
 <h2 lang="en">Contact</h2>
 <p lang="en"><code>noriphone03255@gmail.com</code></p>
+</section>
+
+<section class="lang" data-lang="ja" lang="ja">
+<h1>プライバシーポリシー</h1>
+<p class="muted">アプリ「メタフォーリア（Metafolia）」／最終更新: 2026年8月4日</p>
+
+<p>「メタフォーリア」（以下「本アプリ」）は、塊根植物を3Dで眺めて育てる、<strong>完全オフライン</strong>のアプリです。本アプリは、利用者のプライバシーを最優先に、<strong>個人情報を一切収集しない</strong>設計になっています。</p>
+
+<h2>収集する情報</h2>
+<p><strong>何も収集しません。</strong>本アプリはインターネットに接続せず、サーバーを持たず、アカウント登録も不要です。利用者の情報が端末の外に送信されることはありません。</p>
+
+<h2>端末内に保存される情報</h2>
+<p>次の情報は、利用者の端末内にのみ保存されます。当方はこれらにアクセスできません。</p>
+<ul>
+  <li>表示言語の設定（日本語／英語）</li>
+  <li>各株の育成を始めた日時</li>
+  <li>苗が届く配達スケジュールを開始した日時</li>
+</ul>
+<p>いずれも日時と設定値のみで、氏名・メールアドレス・端末の識別子などは含みません。これらはアプリを削除すると消去されます。</p>
+
+<h2>カメラ・マイク・写真・位置情報について</h2>
+<p>本アプリは、カメラ・マイク・写真ライブラリ・位置情報を<strong>一切使用しません</strong>。これらの許可を求めることもありません。</p>
+
+<h2>トラッキング・広告・第三者提供</h2>
+<p>本アプリは、トラッキング、広告、広告識別子（IDFA）、解析（アナリティクス）、外部SDKを<strong>一切使用しません</strong>。第三者に情報を提供・販売することもありません。</p>
+
+<h2>植物の成長について</h2>
+<p>本アプリの植物は、端末の時計を読んで実時間で成長します。読み取るのは<strong>現在の日時だけ</strong>で、利用状況の記録や送信は行いません。</p>
+
+<h2>ポリシーの変更</h2>
+<p>本ポリシーは必要に応じて変更されることがあります。変更した場合は、本ページにて更新します。</p>
+
+<h2>お問い合わせ</h2>
+<p><code>noriphone03255@gmail.com</code></p>
+</section>
+
+<script>
+(function () {
+  // English is the primary storefront language, so it is what an unqualified link shows.
+  // A #ja fragment overrides it, which is how the app links here when it is set to Japanese.
+  var tabs = document.querySelectorAll('.langtabs button');
+  var panes = document.querySelectorAll('.lang');
+  function show(lang) {
+    if (lang !== 'ja') { lang = 'en'; }
+    document.documentElement.lang = lang;
+    panes.forEach(function (p) { p.classList.toggle('active', p.dataset.lang === lang); });
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.lang === lang)); });
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      show(t.dataset.lang);
+      history.replaceState(null, '', '#' + t.dataset.lang);
+    });
+  });
+  show(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+})();
+</script>
 
 </body>
 </html>

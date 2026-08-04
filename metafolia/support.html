@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>サポート | Metafolia</title>
+<title>Support | Metafolia</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
          line-height: 1.8; color: #4a3b30; background: #fdf8ef; max-width: 720px; margin: 0 auto; padding: 36px 20px 72px; }
@@ -16,10 +16,72 @@
   code { background: #f3ecdd; padding: 1px 6px; border-radius: 4px; }
   hr { border: none; border-top: 1px solid #e7ddca; margin: 3em 0; }
   a { color: #b06a2c; }
+
+  .langtabs { display: flex; gap: 8px; margin: 0 0 28px; }
+  .langtabs button { font: inherit; font-size: 0.92rem; color: #8a7c6d; background: #f3ecdd;
+                     border: 1px solid #e7ddca; border-radius: 999px; padding: 7px 18px; cursor: pointer; }
+  .langtabs button[aria-selected="true"] { background: #b06a2c; border-color: #b06a2c; color: #fff; }
+  /* Both languages are visible until the script runs, so the document stays complete
+     with JavaScript switched off — it is a legal notice before it is a web page. */
+  html.js .lang { display: none; }
+  html.js .lang.active { display: block; }
+  .lang + .lang { border-top: 1px solid #e7ddca; margin-top: 3em; padding-top: 1em; }
+  html.js .lang + .lang { border-top: none; margin-top: 0; padding-top: 0; }
 </style>
 </head>
 <body>
+<script>document.documentElement.className = "js";</script>
 
+<nav class="langtabs" role="tablist">
+  <button type="button" role="tab" data-lang="en" aria-selected="true">English</button>
+  <button type="button" role="tab" data-lang="ja" aria-selected="false">日本語</button>
+</nav>
+
+<section class="lang" data-lang="en" lang="en">
+<h1 lang="en">Support</h1>
+<p class="muted" lang="en">Metafolia</p>
+
+<p lang="en">Metafolia lets you keep caudex plants — Operculicarya pachypus, Dioscorea elephantipes and others — in 3D on your desk. There is no watering and nothing ever dies. Plants grow slowly, in real time.</p>
+
+<h2 lang="en">Getting started</h2>
+<ul>
+  <li lang="en"><strong>Collect from the mailbox</strong>: your first plant is already waiting. Menu (⚙) → Mailbox → Receive.</li>
+  <li lang="en"><strong>Put it in the room</strong>: Menu → Collection → Place in the room. It lands on the shelves or the chest.</li>
+  <li lang="en"><strong>Move it</strong>: tap a plant to select it, then drag it somewhere else.</li>
+  <li lang="en"><strong>Look closely</strong>: select a plant and press View to see just that plant, large. Drag to turn it, pinch to zoom.</li>
+</ul>
+
+<h2 lang="en">FAQ</h2>
+
+<h3 lang="en">How do the plants grow?</h3>
+<p lang="en">By <strong>real elapsed days</strong> since you received them. They change form at 10, 20 and 30 days. Time passes while the app is closed, so coming back after a while means coming back to something bigger.</p>
+
+<h3 lang="en">Do I need to water them? Can they die?</h3>
+<p lang="en">Neither. You can leave the app alone for as long as you like, and nothing gets worse for having been left.</p>
+
+<h3 lang="en">When does a new plant arrive?</h3>
+<p lang="en">One arrives in the mailbox <strong>every seven days</strong>. A small dot appears on the menu button when something is waiting. Nothing expires if you leave it there.</p>
+
+<h3 lang="en">Does it work without an internet connection?</h3>
+<p lang="en">Yes. The app is fully offline. Everything works in airplane mode.</p>
+
+<h3 lang="en">Are there ads or purchases?</h3>
+<p lang="en">No. The app is free, with no in-app purchases, no subscriptions and no advertising.</p>
+
+<h3 lang="en">Why can some plants not go on the floor?</h3>
+<p lang="en">The floor is reserved for plants that <strong>grow large</strong>, such as the banyan. The caudex plants belong on the shelves and the chest.</p>
+
+<h3 lang="en">How do I switch the language?</h3>
+<p lang="en">Menu (⚙) → Settings → Language. It changes immediately.</p>
+
+<h3 lang="en">How do I hide the controls?</h3>
+<p lang="en">Tap an empty part of the screen and the panels disappear, leaving only the plant. Tap again to bring them back.</p>
+
+<h2 lang="en">Contact</h2>
+<p lang="en"><code>noriphone03255@gmail.com</code></p>
+</section>
+
+<section class="lang" data-lang="ja" lang="ja">
 <h1>サポート</h1>
 <p class="muted">アプリ「メタフォーリア（Metafolia）」</p>
 
@@ -62,50 +124,30 @@
 <h2>お問い合わせ</h2>
 <p>ご質問・ご要望・不具合のご連絡は、こちらまでお願いします。</p>
 <p><code>noriphone03255@gmail.com</code></p>
+</section>
 
-<hr />
-
-<h1 lang="en">Support</h1>
-<p class="muted" lang="en">Metafolia</p>
-
-<p lang="en">Metafolia lets you keep caudex plants — Operculicarya pachypus, Dioscorea elephantipes and others — in 3D on your desk. There is no watering and nothing ever dies. Plants grow slowly, in real time.</p>
-
-<h2 lang="en">Getting started</h2>
-<ul>
-  <li lang="en"><strong>Collect from the mailbox</strong>: your first plant is already waiting. Menu (⚙) → Mailbox → Receive.</li>
-  <li lang="en"><strong>Put it in the room</strong>: Menu → Collection → Place in the room. It lands on the shelves or the chest.</li>
-  <li lang="en"><strong>Move it</strong>: tap a plant to select it, then drag it somewhere else.</li>
-  <li lang="en"><strong>Look closely</strong>: select a plant and press View to see just that plant, large. Drag to turn it, pinch to zoom.</li>
-</ul>
-
-<h2 lang="en">FAQ</h2>
-
-<h3 lang="en">How do the plants grow?</h3>
-<p lang="en">By <strong>real elapsed days</strong> since you received them. They change form at 10, 20 and 30 days. Time passes while the app is closed, so coming back after a while means coming back to something bigger.</p>
-
-<h3 lang="en">Do I need to water them? Can they die?</h3>
-<p lang="en">Neither. You can leave the app alone for as long as you like, and nothing gets worse for having been left.</p>
-
-<h3 lang="en">When does a new plant arrive?</h3>
-<p lang="en">One arrives in the mailbox <strong>every seven days</strong>. A small dot appears on the menu button when something is waiting. Nothing expires if you leave it there.</p>
-
-<h3 lang="en">Does it work without an internet connection?</h3>
-<p lang="en">Yes. The app is fully offline. Everything works in airplane mode.</p>
-
-<h3 lang="en">Are there ads or purchases?</h3>
-<p lang="en">No. The app is free, with no in-app purchases, no subscriptions and no advertising.</p>
-
-<h3 lang="en">Why can some plants not go on the floor?</h3>
-<p lang="en">The floor is reserved for plants that <strong>grow large</strong>, such as the banyan. The caudex plants belong on the shelves and the chest.</p>
-
-<h3 lang="en">How do I switch the language?</h3>
-<p lang="en">Menu (⚙) → Settings → Language. It changes immediately.</p>
-
-<h3 lang="en">How do I hide the controls?</h3>
-<p lang="en">Tap an empty part of the screen and the panels disappear, leaving only the plant. Tap again to bring them back.</p>
-
-<h2 lang="en">Contact</h2>
-<p lang="en"><code>noriphone03255@gmail.com</code></p>
+<script>
+(function () {
+  // English is the primary storefront language, so it is what an unqualified link shows.
+  // A #ja fragment overrides it, which is how the app links here when it is set to Japanese.
+  var tabs = document.querySelectorAll('.langtabs button');
+  var panes = document.querySelectorAll('.lang');
+  function show(lang) {
+    if (lang !== 'ja') { lang = 'en'; }
+    document.documentElement.lang = lang;
+    panes.forEach(function (p) { p.classList.toggle('active', p.dataset.lang === lang); });
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.lang === lang)); });
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      show(t.dataset.lang);
+      history.replaceState(null, '', '#' + t.dataset.lang);
+    });
+  });
+  show(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+})();
+</script>
 
 </body>
 </html>
