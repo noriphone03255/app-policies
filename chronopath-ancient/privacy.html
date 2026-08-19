@@ -29,7 +29,11 @@
   .lang + .lang { border-top: 1px solid #dcc9aa; margin-top: 3em; padding-top: 1em; }
   html.js .lang + .lang { border-top: none; margin-top: 0; padding-top: 0; }
   .footerlinks { margin-top: 3em; padding-top: 1.25em; border-top: 1px solid #dcc9aa; font-size: 0.9rem; }
-  @media (max-width: 560px) { body { padding-top: 20px; } .topbar { align-items: flex-start; } }
+  @media (max-width: 560px) {
+    body { padding-top: 20px; }
+    .topbar { display: block; }
+    .langtabs { margin-top: 12px; }
+  }
 </style>
 </head>
 <body>
