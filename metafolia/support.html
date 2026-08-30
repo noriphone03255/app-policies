@@ -1,153 +1,169 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Support | Metafolia</title>
+<meta name="color-scheme" content="light" />
+<title>サポート | メタフォーリア</title>
 <style>
+  :root { color-scheme: light; --ink:#2f382f; --muted:#738072; --jade:#315f4d; --sage:#719472;
+          --gold:#c58b3f; --cream:#fbf5e9; --paper:#fffaf0; --line:#dfd4bd; }
+  * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
-         line-height: 1.8; color: #4a3b30; background: #fdf8ef; max-width: 720px; margin: 0 auto; padding: 36px 20px 72px; }
-  h1 { font-size: 1.5rem; color: #3a2e24; border-bottom: 2px solid #f0b64a; padding-bottom: 8px; }
-  h2 { font-size: 1.12rem; margin-top: 2em; color: #b06a2c; }
-  h3 { font-size: 1rem; margin-top: 1.6em; color: #3a2e24; }
+         line-height: 1.8; color: var(--ink); background: var(--cream); max-width: 760px; margin: 0 auto;
+         padding: 28px 20px 72px; }
+  h1 { font-size: 1.55rem; color: var(--ink); border-bottom: 2px solid var(--gold); padding-bottom: 9px; }
+  h2 { font-size: 1.12rem; margin-top: 2em; color: var(--jade); }
+  h3 { font-size: 1rem; margin: 1.6em 0 0.25em; color: #36493d; }
   p, li { font-size: 1rem; }
-  strong { color: #3a2e24; }
-  .muted { color: #8a7c6d; font-size: 0.86rem; }
-  code { background: #f3ecdd; padding: 1px 6px; border-radius: 4px; }
-  hr { border: none; border-top: 1px solid #e7ddca; margin: 3em 0; }
-  a { color: #b06a2c; }
-
-  .langtabs { display: flex; gap: 8px; margin: 0 0 28px; }
-  .langtabs button { font: inherit; font-size: 0.92rem; color: #8a7c6d; background: #f3ecdd;
-                     border: 1px solid #e7ddca; border-radius: 999px; padding: 7px 18px; cursor: pointer; }
-  .langtabs button[aria-selected="true"] { background: #b06a2c; border-color: #b06a2c; color: #fff; }
-  /* Both languages are visible until the script runs, so the document stays complete
-     with JavaScript switched off — it is a legal notice before it is a web page. */
+  strong { color: #263029; }
+  .muted { color: var(--muted); font-size: 0.86rem; }
+  code { background: #efe6d3; padding: 2px 6px; border-radius: 4px; overflow-wrap: anywhere; }
+  a { color: var(--jade); overflow-wrap: anywhere; }
+  .topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+  .docnav, .langtabs { display: flex; flex-wrap: wrap; gap: 7px; }
+  .docnav a, .langtabs button { font: inherit; color: #59665b; background: #efe6d3; border: 1px solid var(--line);
+                               border-radius: 999px; padding: 6px 11px; font-size: 0.83rem; text-decoration: none; }
+  .langtabs button { padding-inline: 13px; cursor: pointer; }
+  .docnav a.current, .langtabs button[aria-selected="true"] { color: #fff; background: var(--jade); border-color: var(--jade); }
   html.js .lang { display: none; }
   html.js .lang.active { display: block; }
-  .lang + .lang { border-top: 1px solid #e7ddca; margin-top: 3em; padding-top: 1em; }
+  .lang + .lang { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1em; }
   html.js .lang + .lang { border-top: none; margin-top: 0; padding-top: 0; }
+  .contact { background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--sage);
+             border-radius: 12px; padding: 13px 15px; }
+  .footerlinks { margin-top: 3em; padding-top: 1.25em; border-top: 1px solid var(--line); font-size: 0.9rem; }
+  @media (max-width: 560px) { body { padding-top: 20px; } .topbar { display: block; } .langtabs { margin-top: 12px; } }
 </style>
 </head>
 <body>
 <script>document.documentElement.className = "js";</script>
 
-<nav class="langtabs" role="tablist">
-  <button type="button" role="tab" data-lang="en" aria-selected="true">English</button>
-  <button type="button" role="tab" data-lang="ja" aria-selected="false">日本語</button>
-</nav>
-
-<section class="lang" data-lang="en" lang="en">
-<h1 lang="en">Support</h1>
-<p class="muted" lang="en">Metafolia</p>
-
-<p lang="en">Metafolia lets you keep caudex plants — Operculicarya pachypus, Dioscorea elephantipes and others — in 3D on your desk. There is no watering and nothing ever dies. Plants grow slowly, in real time.</p>
-
-<h2 lang="en">Getting started</h2>
-<ul>
-  <li lang="en"><strong>Collect from the mailbox</strong>: your first plant is already waiting. Menu (⚙) → Mailbox → Receive.</li>
-  <li lang="en"><strong>Put it in the room</strong>: Menu → Collection → Place in the room. It lands on the shelves or the chest.</li>
-  <li lang="en"><strong>Move it</strong>: tap a plant to select it, then drag it somewhere else.</li>
-  <li lang="en"><strong>Look closely</strong>: select a plant and press View to see just that plant, large. Drag to turn it, pinch to zoom.</li>
-</ul>
-
-<h2 lang="en">FAQ</h2>
-
-<h3 lang="en">How do the plants grow?</h3>
-<p lang="en">By <strong>real elapsed days</strong> since you received them. They change form at 10, 20 and 30 days. Time passes while the app is closed, so coming back after a while means coming back to something bigger.</p>
-
-<h3 lang="en">Do I need to water them? Can they die?</h3>
-<p lang="en">Neither. You can leave the app alone for as long as you like, and nothing gets worse for having been left.</p>
-
-<h3 lang="en">When does a new plant arrive?</h3>
-<p lang="en">One arrives in the mailbox <strong>every seven days</strong>. A small dot appears on the menu button when something is waiting. Nothing expires if you leave it there.</p>
-
-<h3 lang="en">Does it work without an internet connection?</h3>
-<p lang="en">Yes. The app is fully offline. Everything works in airplane mode.</p>
-
-<h3 lang="en">Are there ads or purchases?</h3>
-<p lang="en">No. The app is free, with no in-app purchases, no subscriptions and no advertising.</p>
-
-<h3 lang="en">Why can some plants not go on the floor?</h3>
-<p lang="en">The floor is reserved for plants that <strong>grow large</strong>, such as the banyan. The caudex plants belong on the shelves and the chest.</p>
-
-<h3 lang="en">How do I switch the language?</h3>
-<p lang="en">Menu (⚙) → Settings → Language. It changes immediately.</p>
-
-<h3 lang="en">How do I hide the controls?</h3>
-<p lang="en">Tap an empty part of the screen and the panels disappear, leaving only the plant. Tap again to bring them back.</p>
-
-<h2 lang="en">Contact</h2>
-<p lang="en"><code>noriphone03255@gmail.com</code></p>
-</section>
+<div class="topbar">
+  <nav class="docnav" aria-label="Document navigation">
+    <a href="privacy.html">プライバシー</a>
+    <a href="terms.html">利用規約</a>
+    <a class="current" href="support.html">サポート</a>
+  </nav>
+  <nav class="langtabs" role="tablist" aria-label="Language">
+    <button type="button" role="tab" data-lang="ja" aria-selected="true">日本語</button>
+    <button type="button" role="tab" data-lang="en" aria-selected="false">English</button>
+  </nav>
+</div>
 
 <section class="lang" data-lang="ja" lang="ja">
 <h1>サポート</h1>
 <p class="muted">アプリ「メタフォーリア（Metafolia）」</p>
 
-<p>「メタフォーリア」は、パキプスや亀甲竜といった塊根植物を3Dで手元に置いて眺めるアプリです。水やりも、枯れることもありません。株は現実の時間に合わせてゆっくり育ちます。</p>
+<p>「メタフォーリア」は、塊根植物を育てながら、水やり、栄養、害虫、雑草のお世話や動物たちとの暮らしを楽しむ2D育成ゲームです。</p>
 
-<h2>はじめかた</h2>
+<h2>基本の遊び方</h2>
 <ul>
-  <li><strong>ポストから受け取る</strong>：最初の苗はポストに届いています。左上のメニュー（⚙）→「ポスト」→「受け取る」。</li>
-  <li><strong>部屋に置く</strong>：メニュー →「持ち物」→「部屋に置く」で、棚やチェストの上に置かれます。</li>
-  <li><strong>動かす</strong>：株をタップして選び、そのままドラッグすると別の場所へ移せます。</li>
-  <li><strong>近くで見る</strong>：株を選んで「鑑賞」を押すと、その株だけを大きく眺められます。ドラッグで回して、二本指でひろげると拡大します。</li>
+  <li><strong>最初の植物を選ぶ：</strong>アイアイ先生の案内に沿って植物を選び、最初のお世話を完了します。</li>
+  <li><strong>水・栄養：</strong>下部の世話カードを選び、植物へタップします。実際に回復した量に応じて育成ポイントを獲得します。</li>
+  <li><strong>害虫・雑草：</strong>対応する世話カードを選び、画面に現れた対象をタップします。命中したときに育成ポイントを獲得します。</li>
+  <li><strong>成長：</strong>育成ポイントが必要値に達すると、種、幼苗、若株、成株、成熟株へと成長します。</li>
+  <li><strong>動物：</strong>「動物」タブからバオを使って1時間単位で雇うと、それぞれが担当するお世話を自動で手伝います。</li>
 </ul>
 
 <h2>よくある質問</h2>
 
-<h3>植物はどうやって育ちますか？</h3>
-<p>受け取った日からの<strong>実際の日数</strong>で育ちます。10日・20日・30日で姿が変わります。アプリを閉じていても時間は進むので、しばらくぶりに開くと大きくなっています。</p>
+<h3>ログインボーナスはどこで受け取れますか？</h3>
+<p>1日1回、300バオのメールが届きます。右上の設定ボタンから「メール」を開き、「受け取る」を押してください。端末の現在日付を使ったローカル判定のため、日付を変更すると次回の受取時期へ影響する場合があります。</p>
 
-<h3>水やりは必要ですか？　枯れますか？</h3>
-<p>どちらもありません。放っておいて構いませんし、放っておいたことで悪くなることもありません。</p>
+<h3>アプリを閉じている間も時間は進みますか？</h3>
+<p>はい。次回起動時に経過時間を計算し、水分・栄養、雑草・害虫、雇用中の動物のお世話などへ反映します。動物が働いた場合は、戻ったときにお世話報告が表示されます。</p>
 
-<h3>新しい苗はいつ届きますか？</h3>
-<p><strong>7日ごと</strong>にポストへ届きます。届くとメニューのボタンに小さな丸が付きます。受け取らないまま置いておいても消えることはありません。</p>
+<h3>インターネットがなくても遊べますか？</h3>
+<p>ゲーム本体は、開発者のサーバーやアカウントなしで動作します。設定からプライバシーポリシー、利用規約、サポートを開くときと、問い合わせメールを送るときは通信が必要です。</p>
 
-<h3>インターネットがなくても使えますか？</h3>
-<p>はい。本アプリは完全オフラインで動作します。機内モードでも、移動中でもすべての機能をお使いいただけます。</p>
+<h3>データを別の端末へ同期できますか？</h3>
+<p>本アプリ独自のアカウントやクラウド同期機能はありません。端末のバックアップと復元については、iOSおよびAppleの機能に従います。</p>
 
 <h3>広告や課金はありますか？</h3>
-<p>ありません。無料で、アプリ内課金・サブスクリプション・広告は一切ありません。</p>
+<p>現在、広告、アプリ内課金、サブスクリプションはありません。バオはゲーム内で入手・使用するもので、現金への換金はできません。</p>
 
-<h3>床に置ける株と置けない株があるのはなぜ？</h3>
-<p>床はベンガレンシスのように<strong>大きく育つ株のための場所</strong>です。塊根植物は棚やチェストの上に置いてください。</p>
+<h3>音が聞こえません</h3>
+<p>iPhone本体の音量、消音モード、ほかの音声出力先をご確認ください。動物のお世話音は、連続しても耳につきにくいよう手動のお世話音より控えめです。</p>
 
-<h3>表示を英語にしたい</h3>
-<p>メニュー（⚙）→「設定」→「言語」で切り替えられます。すぐに反映されます。</p>
-
-<h3>操作パネルを消して眺めたい</h3>
-<p>画面の何もないところをタップすると、パネルが消えて植物だけになります。もう一度タップすると戻ります。</p>
+<h3>操作や表示がおかしいときは？</h3>
+<p>一度アプリを終了して開き直し、App Storeに更新がある場合は最新版へ更新してください。改善しない場合は、機種名、iOSのバージョン、アプリのバージョン、発生手順、可能であれば画面画像を添えてお問い合わせください。アプリのバージョンは、右上の設定画面の一番下に表示されます。</p>
 
 <h2>お問い合わせ</h2>
-<p>ご質問・ご要望・不具合のご連絡は、こちらまでお願いします。</p>
-<p><code>noriphone03255@gmail.com</code></p>
+<div class="contact">
+  <p>不具合、ご質問、ご要望はこちらへお願いします。</p>
+  <p><a href="mailto:noriphone03255@gmail.com?subject=%E3%83%A1%E3%82%BF%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AA%E3%82%A2%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><code>noriphone03255@gmail.com</code></a></p>
+  <p class="muted">通常、確認後に順次返信します。すべてのご要望への対応を保証するものではありません。</p>
+</div>
+
+<p class="footerlinks"><a href="privacy.html#ja">プライバシーポリシー</a> · <a href="terms.html#ja">利用規約</a></p>
+</section>
+
+<section class="lang" data-lang="en" lang="en">
+<h1>Support</h1>
+<p class="muted">Metafolia</p>
+
+<p>Metafolia is a 2D plant-care game where you raise caudex plants, manage water, nutrition, pests, and weeds, and live with animal helpers.</p>
+
+<h2>Getting started</h2>
+<ul>
+  <li><strong>Choose your first plant:</strong> Follow the Aye-aye professor and complete the first care steps.</li>
+  <li><strong>Water and nutrition:</strong> Select a care card at the bottom, then tap the plant. You earn growth points based on the amount actually restored.</li>
+  <li><strong>Pests and weeds:</strong> Select the matching care card and tap a target that appears in the scene. A successful hit grants growth points.</li>
+  <li><strong>Growth:</strong> Reaching the required growth points advances the plant through Seed, Seedling, Young Plant, Adult Plant, and Mature Plant.</li>
+  <li><strong>Animal helpers:</strong> Use Bao in the Animal tab to hire helpers by the hour. Each helper automatically performs its assigned care.</li>
+</ul>
+
+<h2>FAQ</h2>
+
+<h3>Where do I claim the login bonus?</h3>
+<p>A mail containing 300 Bao is delivered once per day. Open Settings at the upper right, select Mail, and tap Claim. Eligibility uses the current date on your device, so changing the date may affect when the next bonus is available.</p>
+
+<h3>Does time pass while the App is closed?</h3>
+<p>Yes. The next time you open the App, elapsed time is applied to water, nutrition, weeds, pests, and care by hired helpers. If helpers worked while you were away, an offline-care report appears when you return.</p>
+
+<h3>Can I play without an internet connection?</h3>
+<p>The core game works without a developer server or account. Internet access is needed when opening Privacy Policy, Terms of Use, or Support from Settings, and when sending a support email.</p>
+
+<h3>Can I sync data to another device?</h3>
+<p>The App does not provide its own account or cloud-sync feature. Device backup and restoration are governed by iOS and Apple services.</p>
+
+<h3>Are there ads or purchases?</h3>
+<p>There are currently no ads, in-app purchases, or subscriptions. Bao is earned and used only in the game and cannot be exchanged for cash.</p>
+
+<h3>Why can’t I hear sound effects?</h3>
+<p>Check the iPhone volume, Silent mode, and any external audio output. Automatic-helper sounds are intentionally quieter than manual-care sounds.</p>
+
+<h3>What should I do if controls or visuals do not work correctly?</h3>
+<p>Close and reopen the App, then install the latest App Store update if one is available. If the issue remains, contact us with your device model, iOS version, App version, steps to reproduce, and a screenshot if possible. The App version appears at the bottom of Settings.</p>
+
+<h2>Contact</h2>
+<div class="contact">
+  <p>For bugs, questions, and feature requests:</p>
+  <p><a href="mailto:noriphone03255@gmail.com?subject=Metafolia%20Support"><code>noriphone03255@gmail.com</code></a></p>
+  <p class="muted">Messages are reviewed and answered in turn. We cannot guarantee that every feature request will be implemented.</p>
+</div>
+
+<p class="footerlinks"><a href="privacy.html#en">Privacy Policy</a> · <a href="terms.html#en">Terms of Use</a></p>
 </section>
 
 <script>
 (function () {
-  // English is the primary storefront language, so it is what an unqualified link shows.
-  // A #ja fragment overrides it, which is how the app links here when it is set to Japanese.
   var tabs = document.querySelectorAll('.langtabs button');
   var panes = document.querySelectorAll('.lang');
   function show(lang) {
-    if (lang !== 'ja') { lang = 'en'; }
+    if (lang !== 'en') { lang = 'ja'; }
     document.documentElement.lang = lang;
     panes.forEach(function (p) { p.classList.toggle('active', p.dataset.lang === lang); });
     tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.lang === lang)); });
+    document.querySelectorAll('.docnav a').forEach(function (a) { a.href = a.getAttribute('href').split('#')[0] + '#' + lang; });
   }
   tabs.forEach(function (t) {
-    t.addEventListener('click', function () {
-      show(t.dataset.lang);
-      history.replaceState(null, '', '#' + t.dataset.lang);
-    });
+    t.addEventListener('click', function () { show(t.dataset.lang); history.replaceState(null, '', '#' + t.dataset.lang); });
   });
   show(location.hash.slice(1));
   window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
 })();
 </script>
-
 </body>
 </html>

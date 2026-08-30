@@ -1,123 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Terms of Use | Metafolia</title>
+<meta name="color-scheme" content="light" />
+<title>利用規約 | メタフォーリア</title>
 <style>
+  :root { color-scheme: light; --ink:#2f382f; --muted:#738072; --jade:#315f4d; --sage:#719472;
+          --gold:#c58b3f; --cream:#fbf5e9; --line:#dfd4bd; }
+  * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
-         line-height: 1.8; color: #4a3b30; background: #fdf8ef; max-width: 720px; margin: 0 auto; padding: 36px 20px 72px; }
-  h1 { font-size: 1.5rem; color: #3a2e24; border-bottom: 2px solid #f0b64a; padding-bottom: 8px; }
-  h2 { font-size: 1.12rem; margin-top: 2em; color: #b06a2c; }
+         line-height: 1.8; color: var(--ink); background: var(--cream); max-width: 760px; margin: 0 auto;
+         padding: 28px 20px 72px; }
+  h1 { font-size: 1.55rem; color: var(--ink); border-bottom: 2px solid var(--gold); padding-bottom: 9px; }
+  h2 { font-size: 1.12rem; margin-top: 2em; color: var(--jade); }
   p, li { font-size: 1rem; }
-  strong { color: #3a2e24; }
-  .muted { color: #8a7c6d; font-size: 0.86rem; }
-  code { background: #f3ecdd; padding: 1px 6px; border-radius: 4px; }
-  hr { border: none; border-top: 1px solid #e7ddca; margin: 3em 0; }
-  a { color: #b06a2c; }
-
-  .langtabs { display: flex; gap: 8px; margin: 0 0 28px; }
-  .langtabs button { font: inherit; font-size: 0.92rem; color: #8a7c6d; background: #f3ecdd;
-                     border: 1px solid #e7ddca; border-radius: 999px; padding: 7px 18px; cursor: pointer; }
-  .langtabs button[aria-selected="true"] { background: #b06a2c; border-color: #b06a2c; color: #fff; }
-  /* Both languages are visible until the script runs, so the document stays complete
-     with JavaScript switched off — it is a legal notice before it is a web page. */
+  strong { color: #263029; }
+  .muted { color: var(--muted); font-size: 0.86rem; }
+  code { background: #efe6d3; padding: 2px 6px; border-radius: 4px; overflow-wrap: anywhere; }
+  a { color: var(--jade); overflow-wrap: anywhere; }
+  .topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+  .docnav, .langtabs { display: flex; flex-wrap: wrap; gap: 7px; }
+  .docnav a, .langtabs button { font: inherit; color: #59665b; background: #efe6d3; border: 1px solid var(--line);
+                               border-radius: 999px; padding: 6px 11px; font-size: 0.83rem; text-decoration: none; }
+  .langtabs button { padding-inline: 13px; cursor: pointer; }
+  .docnav a.current, .langtabs button[aria-selected="true"] { color: #fff; background: var(--jade); border-color: var(--jade); }
   html.js .lang { display: none; }
   html.js .lang.active { display: block; }
-  .lang + .lang { border-top: 1px solid #e7ddca; margin-top: 3em; padding-top: 1em; }
+  .lang + .lang { border-top: 1px solid var(--line); margin-top: 3em; padding-top: 1em; }
   html.js .lang + .lang { border-top: none; margin-top: 0; padding-top: 0; }
+  .footerlinks { margin-top: 3em; padding-top: 1.25em; border-top: 1px solid var(--line); font-size: 0.9rem; }
+  @media (max-width: 560px) { body { padding-top: 20px; } .topbar { display: block; } .langtabs { margin-top: 12px; } }
 </style>
 </head>
 <body>
 <script>document.documentElement.className = "js";</script>
 
-<nav class="langtabs" role="tablist">
-  <button type="button" role="tab" data-lang="en" aria-selected="true">English</button>
-  <button type="button" role="tab" data-lang="ja" aria-selected="false">日本語</button>
-</nav>
-
-<section class="lang" data-lang="en" lang="en">
-<h1 lang="en">Terms of Use</h1>
-<p class="muted" lang="en">Metafolia — Last updated: August 4, 2026</p>
-
-<p lang="en">These Terms of Use ("Terms") govern the use of the app "Metafolia" ("the app"). By using the app, you agree to these Terms.</p>
-
-<h2 lang="en">1. Purpose</h2>
-<p lang="en">The app is for keeping and looking at caudex plants in 3D. Plants grow in real time, following your device's clock.</p>
-
-<h2 lang="en">2. About the plants shown</h2>
-<p lang="en">The plants in the app are <strong>3D representations</strong> based on real species. They do not accurately reproduce the appearance, growth rate or cultivation of living plants, and the app must not be relied on when growing, buying or appraising real specimens. The botanical information shown is provided for interest and is not guaranteed to be accurate.</p>
-
-<h2 lang="en">3. Price</h2>
-<p lang="en">The app is free. There are no in-app purchases, no subscriptions and no advertising.</p>
-
-<h2 lang="en">4. Restrictions</h2>
-<p lang="en">You may not copy, modify, decompile, reverse-engineer or redistribute the app, use the 3D models, images or text it contains without permission, or use the app in any way that breaks the law.</p>
-
-<h2 lang="en">5. Disclaimer</h2>
-<p lang="en">The app is provided as is, without warranty of accuracy, completeness or fitness for any particular purpose. To the extent permitted by law, the developer is not liable for any damages arising from use of the app.</p>
-
-<h2 lang="en">6. Changes to these Terms</h2>
-<p lang="en">These Terms may be updated as needed. Any changes will be published on this page.</p>
-
-<h2 lang="en">7. Governing law</h2>
-<p lang="en">These Terms are governed by the laws of Japan. Apple's standard Licensed Application End User License Agreement also applies to copies of the app obtained through the App Store.</p>
-
-<p class="muted" lang="en">© 2026 Noriaki Orikasa</p>
-</section>
+<div class="topbar">
+  <nav class="docnav" aria-label="Document navigation">
+    <a href="privacy.html">プライバシー</a>
+    <a class="current" href="terms.html">利用規約</a>
+    <a href="support.html">サポート</a>
+  </nav>
+  <nav class="langtabs" role="tablist" aria-label="Language">
+    <button type="button" role="tab" data-lang="ja" aria-selected="true">日本語</button>
+    <button type="button" role="tab" data-lang="en" aria-selected="false">English</button>
+  </nav>
+</div>
 
 <section class="lang" data-lang="ja" lang="ja">
 <h1>利用規約</h1>
-<p class="muted">アプリ「メタフォーリア（Metafolia）」／最終更新: 2026年8月4日</p>
+<p class="muted">アプリ「メタフォーリア（Metafolia）」／最終更新: 2026年8月30日</p>
 
-<p>本利用規約（以下「本規約」）は、アプリ「メタフォーリア」（以下「本アプリ」）の利用条件を定めるものです。利用者は、本アプリを利用することで本規約に同意したものとみなされます。</p>
+<p>本利用規約（以下「本規約」）は、「メタフォーリア」（以下「本アプリ」）の利用条件を定めます。利用者は、本アプリを利用することで本規約に同意したものとみなされます。</p>
 
-<h2>1. 本アプリの目的</h2>
-<p>本アプリは、塊根植物を3Dで眺めて楽しむための鑑賞アプリです。株は端末の時計に合わせて実時間で育ちます。</p>
+<h2>1. 本アプリについて</h2>
+<p>本アプリは、塊根植物のお世話、害虫や雑草への対応、動物による自動のお世話、図鑑の収集などを楽しむ2D育成ゲームです。ゲーム内の成長や時間進行は、実際の植物の栽培方法や成長速度を再現するものではありません。</p>
 
-<h2>2. 植物の再現について</h2>
-<p>本アプリに登場する植物は、実在の種をもとにした<strong>3Dモデルによる表現</strong>です。実物の姿・成長速度・栽培方法を正確に再現するものではなく、本アプリの内容を実際の植物の栽培・購入・鑑定の判断に用いないでください。基本情報として表示する学名等は参考情報であり、正確性を保証するものではありません。</p>
+<h2>2. 植物等の情報</h2>
+<p>植物の名称、学名、分布等の説明は、ゲームと鑑賞のための参考情報です。正確性、完全性、最新性を保証するものではなく、実際の植物の栽培、購入、鑑定、健康や安全に関する判断へ使用しないでください。</p>
 
-<h2>3. 料金</h2>
-<p>本アプリは無料です。アプリ内課金・サブスクリプション・広告はありません。</p>
+<h2>3. 料金とゲーム内アイテム</h2>
+<p>現在、本アプリは無料で、アプリ内課金、サブスクリプション、広告はありません。ゲーム内の育成ポイントおよび「バオ」は、ゲーム内でのみ利用できる表現であり、現金その他の財産的価値を持たず、換金、譲渡、払戻しはできません。</p>
 
-<h2>4. 禁止事項</h2>
-<p>利用者は、本アプリの複製・改変・逆コンパイル・リバースエンジニアリング・再配布、本アプリに含まれる3Dモデル・画像・テキストの無断利用、その他法令に違反する行為を行ってはなりません。</p>
+<h2>4. 端末日時と保存データ</h2>
+<p>本アプリは、育成状態、出現タイマー、動物の雇用時間、ログインボーナス等の判定に端末日時を利用します。端末日時の変更、OSの動作、アプリの更新・削除、端末の故障・交換等により、進行や保存データへ影響が生じる場合があります。開発者は、消失または意図しない変化が生じた保存データを復元できることを保証しません。</p>
 
-<h2>5. 免責事項</h2>
-<p>本アプリは現状有姿で提供され、その正確性・完全性・特定目的への適合性を保証しません。本アプリの利用により利用者に生じたいかなる損害についても、開発者は法令の認める範囲で責任を負いません。</p>
+<h2>5. 禁止事項</h2>
+<p>利用者は、次の行為を行ってはなりません。</p>
+<ul>
+  <li>法令または公序良俗に違反する行為</li>
+  <li>本アプリの不正利用、動作を妨害する行為</li>
+  <li>法令上認められる場合を除く、複製、改変、逆コンパイル、リバースエンジニアリング、再配布</li>
+  <li>本アプリに含まれる画像、文章、音声、デザイン等を権利者の許可なく転載・販売・配布する行為</li>
+</ul>
 
-<h2>6. 本規約の変更</h2>
-<p>本規約は、必要に応じて変更されることがあります。変更があった場合は、本ページにて更新します。</p>
+<h2>6. 知的財産権</h2>
+<p>本アプリおよび本アプリに含まれる画像、文章、音声、プログラム、デザイン等に関する権利は、開発者または正当な権利者に帰属します。本規約は、利用者へこれらの権利を移転するものではありません。</p>
 
-<h2>7. 準拠法</h2>
-<p>本規約は日本法に準拠します。なお、App Store を通じて入手した本アプリには、Apple の「ライセンス供与されたアプリケーションのエンドユーザー使用許諾契約（標準EULA）」も適用されます。</p>
+<h2>7. 提供内容の変更・終了</h2>
+<p>開発者は、品質改善、保守、法令対応その他の必要に応じて、本アプリの内容、仕様、バランス、対応環境を変更し、または提供を終了することがあります。</p>
 
+<h2>8. 免責と責任の制限</h2>
+<p>本アプリは現状有姿で提供されます。開発者は、正確性、完全性、継続性、特定目的への適合性、障害が生じないことを保証しません。本アプリの利用または利用不能により生じた損害について、開発者は、故意または重過失がある場合その他法令上制限できない場合を除き、責任を負いません。消費者契約法その他の強行法規により認められない制限は適用されません。</p>
+
+<h2>9. 本規約の変更</h2>
+<p>本規約は、機能・法令・配信方法等の変更に応じて更新することがあります。重要な変更は、本ページまたは本アプリ内で案内します。</p>
+
+<h2>10. 準拠法</h2>
+<p>本規約は日本法に準拠します。App Storeを通じて入手した本アプリには、Appleの<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer">ライセンス供与されたアプリケーションの標準エンドユーザー使用許諾契約</a>も適用されます。</p>
+
+<h2>11. お問い合わせ</h2>
+<p><a href="mailto:noriphone03255@gmail.com"><code>noriphone03255@gmail.com</code></a></p>
 <p class="muted">© 2026 Noriaki Orikasa</p>
+
+<p class="footerlinks"><a href="privacy.html#ja">プライバシーポリシー</a> · <a href="support.html#ja">サポート</a></p>
+</section>
+
+<section class="lang" data-lang="en" lang="en">
+<h1>Terms of Use</h1>
+<p class="muted">Metafolia — Last updated: August 30, 2026</p>
+
+<p>These Terms of Use (“Terms”) govern your use of “Metafolia” (the “App”). By using the App, you agree to these Terms.</p>
+
+<h2>1. About the App</h2>
+<p>The App is a 2D plant-care game featuring caudex plants, pest and weed care, automated animal helpers, and an encyclopedia collection. In-game growth and time progression do not reproduce the cultivation methods or growth rates of living plants.</p>
+
+<h2>2. Plant and other information</h2>
+<p>Plant names, scientific names, distribution, and other descriptions are provided as general references for the game and viewing experience. Their accuracy, completeness, and currency are not guaranteed. Do not rely on the App for real-world cultivation, purchasing, appraisal, health, or safety decisions.</p>
+
+<h2>3. Price and virtual items</h2>
+<p>The App is currently free and has no in-app purchases, subscriptions, or advertising. Growth points and “Bao” are in-game representations only. They have no cash or other property value and cannot be converted, transferred, or refunded.</p>
+
+<h2>4. Device time and save data</h2>
+<p>The App uses your device date and time for care status, spawn timers, helper rental periods, login bonuses, and other calculations. Changes to device time, OS behavior, App updates or deletion, device failure, or replacement may affect progress or save data. The developer does not guarantee that lost or unexpectedly changed save data can be restored.</p>
+
+<h2>5. Restrictions</h2>
+<p>You must not:</p>
+<ul>
+  <li>Use the App in violation of law or public order;</li>
+  <li>Misuse or interfere with the App;</li>
+  <li>Copy, modify, decompile, reverse-engineer, or redistribute the App except where permitted by law; or</li>
+  <li>Reproduce, sell, or distribute images, text, audio, designs, or other App content without permission from the rights holder.</li>
+</ul>
+
+<h2>6. Intellectual property</h2>
+<p>Rights in the App and its images, text, audio, software, designs, and other content belong to the developer or their respective rights holders. These Terms do not transfer those rights to you.</p>
+
+<h2>7. Changes and discontinuation</h2>
+<p>The developer may change the App’s content, specifications, game balance, or supported environment, or discontinue the App, as reasonably necessary for improvement, maintenance, legal compliance, or other operational reasons.</p>
+
+<h2>8. Disclaimer and limitation of liability</h2>
+<p>The App is provided “as is.” The developer does not guarantee accuracy, completeness, continuity, fitness for a particular purpose, or error-free operation. To the extent permitted by law, the developer is not liable for damages arising from use or inability to use the App, except in cases of willful misconduct, gross negligence, or other liability that cannot legally be excluded. Limitations prohibited by mandatory consumer law do not apply.</p>
+
+<h2>9. Changes to these Terms</h2>
+<p>We may update these Terms when features, laws, or distribution methods change. Material changes will be announced on this page or in the App.</p>
+
+<h2>10. Governing law</h2>
+<p>These Terms are governed by the laws of Japan. Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer">Standard Licensed Application End User License Agreement</a> also applies to copies obtained through the App Store.</p>
+
+<h2>11. Contact</h2>
+<p><a href="mailto:noriphone03255@gmail.com"><code>noriphone03255@gmail.com</code></a></p>
+<p class="muted">© 2026 Noriaki Orikasa</p>
+
+<p class="footerlinks"><a href="privacy.html#en">Privacy Policy</a> · <a href="support.html#en">Support</a></p>
 </section>
 
 <script>
 (function () {
-  // English is the primary storefront language, so it is what an unqualified link shows.
-  // A #ja fragment overrides it, which is how the app links here when it is set to Japanese.
   var tabs = document.querySelectorAll('.langtabs button');
   var panes = document.querySelectorAll('.lang');
   function show(lang) {
-    if (lang !== 'ja') { lang = 'en'; }
+    if (lang !== 'en') { lang = 'ja'; }
     document.documentElement.lang = lang;
     panes.forEach(function (p) { p.classList.toggle('active', p.dataset.lang === lang); });
     tabs.forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.lang === lang)); });
+    document.querySelectorAll('.docnav a').forEach(function (a) { a.href = a.getAttribute('href').split('#')[0] + '#' + lang; });
   }
   tabs.forEach(function (t) {
-    t.addEventListener('click', function () {
-      show(t.dataset.lang);
-      history.replaceState(null, '', '#' + t.dataset.lang);
-    });
+    t.addEventListener('click', function () { show(t.dataset.lang); history.replaceState(null, '', '#' + t.dataset.lang); });
   });
   show(location.hash.slice(1));
   window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
 })();
 </script>
-
 </body>
 </html>
