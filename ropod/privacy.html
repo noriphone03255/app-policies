@@ -54,14 +54,14 @@
 <header>
   <p class="kicker">Ropod</p>
   <h1>プライバシーポリシー</h1>
-  <p class="updated">最終更新日：2026年9月1日</p>
+  <p class="updated">最終更新日：2026年9月2日</p>
 </header>
 
 <p class="lang-note">This Privacy Policy is provided in Japanese first, followed by an English translation below. / 日本語の本文の下に、英語版を掲載しています。</p>
 
 <section>
   <p>本プライバシーポリシーは、Ropod（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。本アプリは、興味のあるテーマからAIと学習用文章を作り、音声で聞くためのアプリです。</p>
-  <p><strong>要点：本アプリは、氏名・メールアドレス・電話番号など直接個人を特定する情報を意図的に収集せず、アカウント登録も不要です。作成した本・項目・完成音声はお使いの端末内に保存されます。文章生成、Pro向けAI音声、任意の完成通知、無料版の広告に必要なデータだけを、以下の外部サービスへ送信します。</strong></p>
+  <p><strong>要点：本アプリは、氏名・メールアドレス・電話番号など直接個人を特定する情報を意図的に収集せず、アカウント登録も不要です。作成した本・項目・完成音声はお使いの端末内に保存されます。文章生成、Pro向けAI音声、無料版の広告に必要なデータだけを、以下の外部サービスへ送信します。</strong></p>
 </section>
 
 <section>
@@ -83,9 +83,6 @@
 
   <h3>再生とAI音声</h3>
   <p>無料版の再生にはiPhone内の読み上げ機能を使うため、無料再生のために本文をInworldへ送信しません。Ropod Proでは、生成した項目ごとに本文をCloudflare Worker経由でInworldへ自動送信し、AI音声を作成します。処理中は、再開可能な長時間ジョブのために本文のかたまりと生成中の音声パーツをCloudflare R2へ<strong>一時保存</strong>する場合があり、処理用ファイルは<strong>約1日で自動削除</strong>されます。完成音声は端末へダウンロードされます。</p>
-
-  <h3>通知</h3>
-  <p>Ropod Proおよび非公開の開発用ビルドで通知を許可した場合、<strong>Expoのプッシュトークン</strong>と匿名のサブスクリプションまたは端末識別子を当社サーバーへ登録します。音声完成通知だけに使い、最新登録から最大90日間保存します。販売や広告には使いません。拒否しても生成・再生を利用できます。</p>
 
   <h3>表紙写真</h3>
   <p>本の表紙に写真を選んだ場合、その写真は<strong>お使いの端末内にのみ</strong>コピーされます（読み取り専用の写真アクセス）。当社サーバーへアップロードすることはありません。</p>
@@ -112,7 +109,6 @@
     <tr><td>RevenueCat</td><td>匿名ID</td><td>有料プランの加入状態の確認</td></tr>
     <tr><td>Apple</td><td>購入処理</td><td>App内課金の決済（支払い情報は当社・本アプリでは受け取りません）</td></tr>
     <tr><td>Cloudflare</td><td>通信の中継・生成結果と処理用ファイルの一時保存</td><td>APIキーの保護、利用量の管理、生成の再接続、音声化の処理</td></tr>
-    <tr><td>Expo・Apple Push Notification service</td><td>任意のプッシュトークン</td><td>音声完成の通知配信</td></tr>
     <tr><td>Google Mobile Ads</td><td>おおよその位置、端末・アプリ識別子、操作、広告・診断データ等</td><td>無料版の非パーソナライズ広告、測定、不正防止</td></tr>
   </table>
   <p class="muted">各社のプライバシーポリシー：
@@ -121,7 +117,6 @@
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>・
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>・
     <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>・
-    <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a>・
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>
   </p>
 </section>
@@ -163,12 +158,12 @@
 <header>
   <p class="kicker">Ropod</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 1, 2026</p>
+  <p class="updated">Last updated: September 2, 2026</p>
 </header>
 
 <section>
   <p>This Privacy Policy explains how Ropod ("the App") handles your information. The App helps you create a learning script with AI from a topic you are curious about and listen to it.</p>
-  <p><strong>In short: the App does not intentionally collect direct identifiers such as your name, email, or phone number, and no account is required. Your books, items, and completed audio are stored on your device. Only the data needed for script generation, Pro AI audio, optional completion notifications, and Free-plan advertising is sent to the processors listed below.</strong></p>
+  <p><strong>In short: the App does not intentionally collect direct identifiers such as your name, email, or phone number, and no account is required. Your books, items, and completed audio are stored on your device. Only the data needed for script generation, Pro AI audio, and Free-plan advertising is sent to the processors listed below.</strong></p>
 </section>
 
 <section>
@@ -190,9 +185,6 @@
 
   <h3>Playback and AI audio</h3>
   <p>Free playback uses the iPhone's on-device speech engine, so the script is not sent to Inworld for Free playback. With Ropod Pro, each generated item is automatically sent through our Cloudflare Worker to Inworld to create AI audio. During processing, text chunks and in-progress audio parts may be <strong>temporarily stored</strong> on Cloudflare R2 so a long job can resume. These job files are <strong>automatically deleted after about one day</strong>, and completed audio is downloaded to your device.</p>
-
-  <h3>Notifications</h3>
-  <p>For Ropod Pro and private development builds, if you allow notifications we register an <strong>Expo push token</strong> plus an anonymous subscription or device identifier with our server. It is used only for audio-completion notifications, retained for up to 90 days from the latest registration, and never sold or used for advertising. Generation and playback still work if you decline.</p>
 
   <h3>Cover photos</h3>
   <p>If you choose a photo as a book cover, it is copied <strong>only on your device</strong> (read-only photo access). Cover photos are never uploaded to our servers.</p>
@@ -219,7 +211,6 @@
     <tr><td>RevenueCat</td><td>Anonymous ID</td><td>Checking paid-plan status</td></tr>
     <tr><td>Apple</td><td>Purchase processing</td><td>In-app purchases (we never receive payment details)</td></tr>
     <tr><td>Cloudflare</td><td>Request relay and temporary generation-result/job storage</td><td>Protecting API keys, managing usage, reconnecting generation, and processing audio</td></tr>
-    <tr><td>Expo &amp; Apple Push Notification service</td><td>Optional push token</td><td>Delivering audio-completion notifications</td></tr>
     <tr><td>Google Mobile Ads</td><td>Approximate location, device/app identifiers, interactions, advertising data, and diagnostics</td><td>Non-personalized Free-plan ads, measurement, and fraud prevention</td></tr>
   </table>
   <p class="muted">Third-party privacy policies:
@@ -228,7 +219,6 @@
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>,
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>,
     <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>,
-    <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a>,
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>
   </p>
 </section>
