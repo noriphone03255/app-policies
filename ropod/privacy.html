@@ -79,7 +79,7 @@
   <h2><span class="num">02</span>本アプリが扱う情報</h2>
 
   <h3>学習用文章の生成</h3>
-  <p>入力したテーマ、AIチャットの内容、選んだ構成項目は、要求された学習用文章を返す目的に限り、当社のCloudflare Workerを経由してOpenAIへ送信されます。完成した本と項目は<strong>お使いの端末内（ローカルデータベース）に保存されます。</strong>当社は利用者のコンテンツを継続保存するサーバーデータベースを持ちません。</p>
+  <p>入力したテーマ、AIチャットの内容、選んだ構成項目は、要求された学習用文章を返す目的に限り、当社のCloudflare Workerを経由してOpenAIへ送信されます。アプリを一時的に離れた場合の二重生成を防ぎ、復帰後に同じ結果を返すため、生成リクエストとその結果を匿名ID・生成ごとのランダムIDに紐づけてCloudflare上へ<strong>原則1時間以内、一時保存</strong>します。恒久的なライブラリとしての完成した本と項目は<strong>お使いの端末内（ローカルデータベース）に保存されます。</strong>当社は利用者のコンテンツを恒久保存するサーバー上のライブラリを持たず、Cloudflare上のコピーは再接続処理のためだけに一時保持します。</p>
 
   <h3>再生とAI音声</h3>
   <p>無料版の再生にはiPhone内の読み上げ機能を使うため、無料再生のために本文をInworldへ送信しません。Ropod Proでは、生成した項目ごとに本文をCloudflare Worker経由でInworldへ自動送信し、AI音声を作成します。処理中は、再開可能な長時間ジョブのために本文のかたまりと生成中の音声パーツをCloudflare R2へ<strong>一時保存</strong>する場合があり、処理用ファイルは<strong>約1日で自動削除</strong>されます。完成音声は端末へダウンロードされます。</p>
@@ -111,7 +111,7 @@
     <tr><td>Inworld</td><td>Proで音声化するテキスト</td><td>AI音声の生成</td></tr>
     <tr><td>RevenueCat</td><td>匿名ID</td><td>有料プランの加入状態の確認</td></tr>
     <tr><td>Apple</td><td>購入処理</td><td>App内課金の決済（支払い情報は当社・本アプリでは受け取りません）</td></tr>
-    <tr><td>Cloudflare</td><td>通信の中継・処理用ファイルの一時保存</td><td>APIキーの保護、利用量の管理、音声化の処理</td></tr>
+    <tr><td>Cloudflare</td><td>通信の中継・生成結果と処理用ファイルの一時保存</td><td>APIキーの保護、利用量の管理、生成の再接続、音声化の処理</td></tr>
     <tr><td>Expo・Apple Push Notification service</td><td>任意のプッシュトークン</td><td>音声完成の通知配信</td></tr>
     <tr><td>Google Mobile Ads</td><td>おおよその位置、端末・アプリ識別子、操作、広告・診断データ等</td><td>無料版の非パーソナライズ広告、測定、不正防止</td></tr>
   </table>
@@ -138,7 +138,7 @@
 
 <section>
   <h2><span class="num">06</span>データの削除</h2>
-  <p>本・項目・完成音声は端末内に保存されているため、<strong>本アプリを削除（アンインストール）すると端末内データは削除されます。</strong>AI音声の処理用ファイルは約1日で自動削除され、通知トークンは最新登録から最大90日で失効します。匿名の利用量カウンターは上限管理と不正利用防止に必要な期間保持されます。</p>
+  <p>本・項目・完成音声は端末内に保存されているため、<strong>本アプリを削除（アンインストール）すると端末内データは削除されます。</strong>再接続用の文章生成リクエストと結果は原則1時間以内、AI音声の処理用ファイルは約1日で自動削除され、通知トークンは最新登録から最大90日で失効します。匿名の利用量カウンターは上限管理と不正利用防止に必要な期間保持されます。</p>
 </section>
 
 <section>
@@ -186,7 +186,7 @@
   <h2><span class="num">02</span>Information the App Handles</h2>
 
   <h3>Learning-script generation</h3>
-  <p>The topics you enter, your AI-chat content, and the outline items you select are sent through our Cloudflare Worker to OpenAI solely to return the requested learning script. Completed books and items are stored <strong>on your device</strong> in a local database. We do not operate a server database that continuously stores your content.</p>
+  <p>The topics you enter, your AI-chat content, and the outline items you select are sent through our Cloudflare Worker to OpenAI solely to return the requested learning script. To prevent duplicate generation when you briefly leave the App and to return the same result after reconnection, a generation request and its result are linked to an anonymous ID and a per-request random ID and <strong>temporarily stored on Cloudflare, normally for no longer than one hour</strong>. Your permanent library of completed books and items is stored <strong>on your device</strong> in a local database. We do not operate a permanent server-side library of your content; the Cloudflare copies are retained temporarily only for reconnection processing.</p>
 
   <h3>Playback and AI audio</h3>
   <p>Free playback uses the iPhone's on-device speech engine, so the script is not sent to Inworld for Free playback. With Ropod Pro, each generated item is automatically sent through our Cloudflare Worker to Inworld to create AI audio. During processing, text chunks and in-progress audio parts may be <strong>temporarily stored</strong> on Cloudflare R2 so a long job can resume. These job files are <strong>automatically deleted after about one day</strong>, and completed audio is downloaded to your device.</p>
@@ -218,7 +218,7 @@
     <tr><td>Inworld</td><td>Text synthesized for Pro users</td><td>Creating AI audio</td></tr>
     <tr><td>RevenueCat</td><td>Anonymous ID</td><td>Checking paid-plan status</td></tr>
     <tr><td>Apple</td><td>Purchase processing</td><td>In-app purchases (we never receive payment details)</td></tr>
-    <tr><td>Cloudflare</td><td>Request relay and temporary job storage</td><td>Protecting API keys, managing usage, and processing audio</td></tr>
+    <tr><td>Cloudflare</td><td>Request relay and temporary generation-result/job storage</td><td>Protecting API keys, managing usage, reconnecting generation, and processing audio</td></tr>
     <tr><td>Expo &amp; Apple Push Notification service</td><td>Optional push token</td><td>Delivering audio-completion notifications</td></tr>
     <tr><td>Google Mobile Ads</td><td>Approximate location, device/app identifiers, interactions, advertising data, and diagnostics</td><td>Non-personalized Free-plan ads, measurement, and fraud prevention</td></tr>
   </table>
@@ -245,7 +245,7 @@
 
 <section>
   <h2><span class="num">06</span>Deleting Your Data</h2>
-  <p>Because books, items, and completed audio are stored on your device, <strong>deleting (uninstalling) the App removes that on-device data.</strong> AI-audio job files are automatically deleted after about one day, and notification tokens expire no later than 90 days after the latest registration. Anonymous usage counters are retained for as long as needed to operate limits and prevent abuse.</p>
+  <p>Because books, items, and completed audio are stored on your device, <strong>deleting (uninstalling) the App removes that on-device data.</strong> Reconnection copies of generation requests and results are normally deleted within one hour, AI-audio job files are automatically deleted after about one day, and notification tokens expire no later than 90 days after the latest registration. Anonymous usage counters are retained for as long as needed to operate limits and prevent abuse.</p>
 </section>
 
 <section>
