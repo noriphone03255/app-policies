@@ -91,6 +91,11 @@
   <h3>購入用の匿名ID</h3>
   <p>アカウント登録を行わないため、RevenueCatが作成するランダムな匿名App User IDを使って、サブスクリプションの購入・復元・権利状態を管理します。このIDと購入・権利状態はRevenueCatおよび当方のCloudflare Workerで処理されます。</p>
 
+  <h3>App Attestのセキュリティ識別子</h3>
+  <p>正規のApple端末上で動く正規のRopodからのAPIリクエストであることを確認するため、AppleのApp Attestを利用します。App Attestの秘密鍵は端末のSecure Enclave内に残り、当方、Cloudflare、その他のサービスへ送信されません。</p>
+  <p>APIの不正利用防止、再利用の検知、利用上限の適用のため、Cloudflare WorkerはApp Attestのkey ID、公開鍵、attestation receipt、最新のassertion counter、アプリの環境とbuild情報を処理・保存します。匿名IDとRevenueCat App User IDは一方向のhashへ変換して、この鍵記録へ紐づけます。これらを広告、広告トラッキング、利用者のプロファイリングには使いません。</p>
+  <p>App Attestのchallengeは5分、認証済みAPI sessionは15分で失効します。サーバー側の鍵記録は、アプリの安全確保と不正利用防止に合理的に必要な期間だけ保持します。</p>
+
   <h3>通信情報</h3>
   <p>インターネット通信の性質上、Cloudflare、OpenAI、Inworld、RevenueCat、Googleなどの処理事業者は、IPアドレス、日時、端末・アプリ情報、リクエスト結果、診断情報などを処理する場合があります。各社による処理は、それぞれの規約およびプライバシーポリシーに従います。</p>
 </section>
@@ -138,9 +143,9 @@
     <tr><th>送信先</th><th>主なデータ</th><th>目的</th></tr>
     <tr><td>OpenAI</td><td>キーワード、質問、チャット、構成、生成条件</td><td>関連トピック、構成、教養解説の生成</td></tr>
     <tr><td>Inworld</td><td>Proで音声化する本文、言語、音声設定</td><td>AI音声の生成</td></tr>
-    <tr><td>Cloudflare</td><td>匿名ID、通信、生成リクエスト・結果、音声処理ファイル</td><td>API中継、認証、上限管理、再接続、待ち行列、一時保存</td></tr>
+    <tr><td>Cloudflare</td><td>匿名ID、App Attestの鍵・検証記録、通信、生成リクエスト・結果、音声処理ファイル</td><td>API中継、正規アプリの確認、不正利用防止、上限管理、再接続、待ち行列、一時保存</td></tr>
     <tr><td>RevenueCat</td><td>匿名App User ID、購入履歴、権利状態</td><td>サブスクリプションの購入・復元・確認</td></tr>
-    <tr><td>Apple</td><td>購入およびApp Store利用情報</td><td>決済、購入管理、レビュー等</td></tr>
+    <tr><td>Apple</td><td>App Attestの検証情報、購入およびApp Store利用情報</td><td>正規アプリの検証、決済、購入管理、レビュー等</td></tr>
     <tr><td>Google Mobile Ads</td><td>おおよその位置、端末・アプリ識別子、操作、広告・診断データ等</td><td>無料版の非パーソナライズ広告、測定、セキュリティ、不正防止</td></tr>
     <tr><td>Google（メール）</td><td>サポートメールの送信元、本文、添付</td><td>問い合わせ対応</td></tr>
   </table>
@@ -162,6 +167,7 @@
     <li><strong>文章生成の再接続コピー：</strong>Cloudflare上で原則1時間以内に自動削除されます。</li>
     <li><strong>AI音声の処理・配信用ファイル：</strong>処理完了時の削除および約1日のストレージライフサイクルにより削除されます。</li>
     <li><strong>AI音声利用量：</strong>月次レコードは2暦月後に削除されます。</li>
+    <li><strong>App Attest：</strong>challengeは5分、認証済みAPI sessionは15分で失効します。鍵、公開鍵、receipt、counter、匿名IDのhash等からなるセキュリティ記録は、不正利用防止に合理的に必要な期間保持します。</li>
     <li><strong>購入情報、広告情報、AI事業者のログ、サポートメール：</strong>各事業者の方針および法的義務に従って保持されます。</li>
   </ul>
   <p>利用者は本アプリ内でナレッジメモやファイルを削除できます。広告の同意選択を再表示できる場合は設定から変更できます。写真へのアクセスはiOSの設定から取り消せます。サブスクリプションはApple Accountの設定から解約できます。</p>
@@ -170,7 +176,7 @@
 
 <section>
   <h2><span class="num">10</span>安全管理と国外処理</h2>
-  <p>通信はHTTPS等を用い、外部サービスの秘密鍵をアプリへ直接埋め込まず、Cloudflare Workerから送信します。アクセス制御、利用上限、短期チケット等を用いて保護します。ただし、インターネット通信や電子保存について絶対的な安全性を保証することはできません。</p>
+  <p>通信はHTTPS等を用い、外部サービスの秘密鍵をアプリへ直接埋め込まず、Cloudflare Workerから送信します。Apple App Attest、アクセス制御、利用上限、短期session・短期チケット等を用いて保護します。ただし、インターネット通信や電子保存について絶対的な安全性を保証することはできません。</p>
   <p>外部サービスは日本国外を含む国・地域で情報を処理する場合があります。移転先では、利用者の居住国と異なるデータ保護法が適用されることがあります。</p>
 </section>
 
@@ -223,6 +229,11 @@
   <h3>Anonymous purchase identifier</h3>
   <p>Because the App has no account registration, RevenueCat creates a random anonymous App User ID to manage subscription purchase, restoration, and entitlement status. RevenueCat and our Cloudflare Worker process this ID and purchase or entitlement status.</p>
 
+  <h3>App Attest security identifiers</h3>
+  <p>We use Apple App Attest to help verify that API requests come from a genuine copy of Ropod running on a genuine Apple device. The App Attest private key remains in the device's Secure Enclave and is never sent to us, Cloudflare, or any other service.</p>
+  <p>To prevent API abuse, detect replay, and enforce usage limits, our Cloudflare Worker processes and stores the App Attest key ID, public key, attestation receipt, latest assertion counter, and app environment and build information. The anonymous App ID and RevenueCat App User ID are converted to one-way hashes and bound to this key record. We do not use this information for advertising, ad tracking, or user profiling.</p>
+  <p>An App Attest challenge expires after five minutes, and an authenticated API session expires after fifteen minutes. The server-side key record is retained only for as long as reasonably necessary for app security and abuse prevention.</p>
+
   <h3>Network information</h3>
   <p>As part of internet communications, processors such as Cloudflare, OpenAI, Inworld, RevenueCat, and Google may process IP addresses, timestamps, device and app information, request outcomes, and diagnostics. Their processing is governed by their own terms and privacy policies.</p>
 </section>
@@ -270,9 +281,9 @@
     <tr><th>Recipient</th><th>Main data</th><th>Purpose</th></tr>
     <tr><td>OpenAI</td><td>Keywords, questions, chat, outline, and generation settings</td><td>Related topics, outlines, and educational explanations</td></tr>
     <tr><td>Inworld</td><td>Pro text, language, and voice settings</td><td>AI voice generation</td></tr>
-    <tr><td>Cloudflare</td><td>Anonymous IDs, network requests, generation requests/results, and audio processing files</td><td>API proxy, authentication, limits, reconnection, queueing, and temporary storage</td></tr>
+    <tr><td>Cloudflare</td><td>Anonymous IDs, App Attest key and verification records, network requests, generation requests/results, and audio processing files</td><td>API proxy, genuine-app verification, abuse prevention, limits, reconnection, queueing, and temporary storage</td></tr>
     <tr><td>RevenueCat</td><td>Anonymous App User ID, purchase history, and entitlement status</td><td>Subscription purchase, restoration, and verification</td></tr>
-    <tr><td>Apple</td><td>Purchase and App Store usage information</td><td>Payment, purchase management, reviews, and related App Store services</td></tr>
+    <tr><td>Apple</td><td>App Attest verification information, purchase information, and App Store usage information</td><td>Genuine-app verification, payment, purchase management, reviews, and related App Store services</td></tr>
     <tr><td>Google Mobile Ads</td><td>Approximate location, device or app identifiers, interactions, advertising data, and diagnostics</td><td>Non-personalized Free-plan ads, measurement, security, and fraud prevention</td></tr>
     <tr><td>Google (email)</td><td>Support sender, message, and attachments</td><td>Support communication</td></tr>
   </table>
@@ -294,6 +305,7 @@
     <li><strong>Text-generation reconnection copies:</strong> normally deleted from Cloudflare within one hour.</li>
     <li><strong>AI-audio processing and delivery files:</strong> deleted during completion and through an approximately one-day storage lifecycle.</li>
     <li><strong>AI-voice usage:</strong> monthly records are deleted after two calendar months.</li>
+    <li><strong>App Attest:</strong> challenges expire after five minutes, and authenticated API sessions expire after fifteen minutes. Security records containing the key, public key, receipt, counter, anonymous-ID hashes, and related metadata are retained for as long as reasonably necessary to prevent abuse.</li>
     <li><strong>Purchases, ads, AI-provider logs, and support email:</strong> retained under the relevant provider's policy and legal obligations.</li>
   </ul>
   <p>You can delete Knowledge Memos and files in the App. Where available, reopen ad-consent choices from Settings. Revoke photo access in iOS Settings. Cancel the subscription in your Apple Account settings.</p>
@@ -302,7 +314,7 @@
 
 <section>
   <h2><span class="num">10</span>Security and International Processing</h2>
-  <p>We use HTTPS and related protections, keep external-service secret keys out of the App, and route them through a Cloudflare Worker. We use access controls, service limits, and short-lived tickets. However, no internet transmission or electronic storage is guaranteed to be completely secure.</p>
+  <p>We use HTTPS and related protections, keep external-service secret keys out of the App, and route them through a Cloudflare Worker. We use Apple App Attest, access controls, service limits, short-lived sessions, and short-lived tickets. However, no internet transmission or electronic storage is guaranteed to be completely secure.</p>
   <p>Providers may process information in countries or regions outside Japan, where data-protection laws may differ from those in your country of residence.</p>
 </section>
 
