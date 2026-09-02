@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ropod プライバシーポリシー / Privacy Policy</title>
+<title>Ropod AI プライバシーポリシー / Privacy Policy</title>
 <style>
   :root{
     --ink:#1a1726;
@@ -45,6 +45,11 @@
   .en h1{font-size:26px;}
   footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
   code{background:#f1eefb;padding:2px 6px;border-radius:5px;font-size:13px;}
+  @media (max-width:560px){
+    .wrap{padding:32px 18px 72px;}
+    table{display:block;overflow-x:auto;}
+    h1{font-size:25px;}
+  }
 </style>
 </head>
 <body>
@@ -52,103 +57,133 @@
 
 <!-- ============ 日本語 ============ -->
 <header>
-  <p class="kicker">Ropod</p>
+  <p class="kicker">Ropod AI</p>
   <h1>プライバシーポリシー</h1>
   <p class="updated">最終更新日：2026年9月2日</p>
 </header>
 
-<p class="lang-note">This Privacy Policy is provided in Japanese first, followed by an English translation below. / 日本語の本文の下に、英語版を掲載しています。</p>
+<p class="lang-note">This Privacy Policy is provided in Japanese first, followed by an English translation. / 日本語の本文の下に英語版を掲載しています。</p>
 
 <section>
-  <p>本プライバシーポリシーは、Ropod（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。本アプリは、興味のあるテーマからAIと学習用文章を作り、音声で聞くためのアプリです。</p>
-  <p><strong>要点：本アプリは、氏名・メールアドレス・電話番号など直接個人を特定する情報を意図的に収集せず、アカウント登録も不要です。作成した本・項目・完成音声はお使いの端末内に保存されます。文章生成、Pro向けAI音声、無料版の広告に必要なデータだけを、以下の外部サービスへ送信します。</strong></p>
+  <p>本プライバシーポリシーは、Ropod AI（以下「本アプリ」）における利用者情報の取り扱いを説明します。本アプリは、キーワードや疑問からAIと教養解説を作り、音声で聞くためのアプリです。</p>
+  <p><strong>要点：アカウント登録は不要です。氏名、メールアドレス、電話番号などをアプリ内で入力させることはなく、直接個人を特定する情報を意図的に収集しません。恒久的なナレッジメモ、会話、ファイル、設定、完成音声は端末内に保存されます。一方、文章生成、Pro向けAI音声、購入確認、無料版の広告に必要な情報は、下記の外部サービスで処理されます。</strong></p>
 </section>
 
 <section>
-  <h2><span class="num">01</span>収集しない情報</h2>
-  <p>本アプリは、以下の情報を<strong>収集しません</strong>。</p>
+  <h2><span class="num">01</span>端末内に保存する情報</h2>
+  <p>本アプリは、次の情報を利用者の端末内に保存します。</p>
   <ul>
-    <li>氏名、メールアドレス、電話番号、住所などの個人を特定する情報</li>
-    <li>正確な位置情報、連絡先</li>
-    <li>広告識別子（IDFA）。本アプリはトラッキングを行わないため、トラッキング許可（ATT）の確認も表示しません。</li>
+    <li>ナレッジメモ、関連トピック、AIチャット履歴</li>
+    <li>生成したファイル、項目、並び順、アーカイブ構成</li>
+    <li>ダウンロード済みの完成音声と再生状態</li>
+    <li>言語、広告の区切り、レビュー依頼時期などのアプリ設定</li>
+    <li>利用者が任意で選んだアーカイブ用の表紙写真または内蔵イラスト</li>
   </ul>
-  <p class="muted">※ 本の表紙に写真を使う場合のみ、読み取り専用で写真ライブラリにアクセスします。選んだ写真は端末内にのみコピーされ、当社サーバーへアップロードすることはありません（下記02を参照）。</p>
+  <p>これらを恒久的なライブラリとして当方のサーバーへ同期することはありません。本アプリは、アカウントによるクラウド同期またはバックアップを提供しません。</p>
 </section>
 
 <section>
-  <h2><span class="num">02</span>本アプリが扱う情報</h2>
+  <h2><span class="num">02</span>本アプリが扱う識別子と通信情報</h2>
 
-  <h3>学習用文章の生成</h3>
-  <p>入力したテーマ、AIチャットの内容、選んだ構成項目は、要求された学習用文章を返す目的に限り、当社のCloudflare Workerを経由してOpenAIへ送信されます。アプリを一時的に離れた場合の二重生成を防ぎ、復帰後に同じ結果を返すため、生成リクエストとその結果を匿名ID・生成ごとのランダムIDに紐づけてCloudflare上へ<strong>原則1時間以内、一時保存</strong>します。恒久的なライブラリとしての完成した本と項目は<strong>お使いの端末内（ローカルデータベース）に保存されます。</strong>当社は利用者のコンテンツを恒久保存するサーバー上のライブラリを持たず、Cloudflare上のコピーは再接続処理のためだけに一時保持します。</p>
+  <h3>匿名の端末識別子</h3>
+  <p>利用上限、不正利用防止、リクエストの所有確認のため、本アプリは端末内でランダムな匿名IDを作成し、Cloudflare Workerへ送信します。このIDは氏名やメールアドレスと結び付けられておらず、広告識別子ではありません。</p>
 
-  <h3>再生とAI音声</h3>
-  <p>無料版の再生にはiPhone内の読み上げ機能を使うため、無料再生のために本文をInworldへ送信しません。Ropod Proでは、生成した項目ごとに本文をCloudflare Worker経由でInworldへ自動送信し、AI音声を作成します。処理中は、再開可能な長時間ジョブのために本文のかたまりと生成中の音声パーツをCloudflare R2へ<strong>一時保存</strong>する場合があり、処理用ファイルは<strong>約1日で自動削除</strong>されます。完成音声は端末へダウンロードされます。</p>
+  <h3>購入用の匿名ID</h3>
+  <p>アカウント登録を行わないため、RevenueCatが作成するランダムな匿名App User IDを使って、サブスクリプションの購入・復元・権利状態を管理します。このIDと購入・権利状態はRevenueCatおよび当方のCloudflare Workerで処理されます。</p>
+
+  <h3>通信情報</h3>
+  <p>インターネット通信の性質上、Cloudflare、OpenAI、Inworld、RevenueCat、Googleなどの処理事業者は、IPアドレス、日時、端末・アプリ情報、リクエスト結果、診断情報などを処理する場合があります。各社による処理は、それぞれの規約およびプライバシーポリシーに従います。</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>AIによる文章生成</h2>
+  <p>入力したキーワード、質問、AIチャット履歴、選択した関連トピック、構成、難易度、長さなど、要求された結果を返すために必要な内容を、当方のCloudflare Worker経由でOpenAIへ送信します。過去の保存済み興味を新しいAIチャットへ自動送信することはありません。ただし、発見画面の「おすすめ」では、端末内に保存した興味や最近の質問から関連トピックを作るため、その情報を送信する場合があります。</p>
+  <p>画面移動や一時的な通信中断で同じ生成を重複させず、復帰後に同じ結果を返すため、生成リクエストと生成結果を、匿名IDおよび生成ごとのランダムIDに紐づけてCloudflare上に<strong>原則1時間以内</strong>一時保存します。</p>
+  <p>OpenAIへのResponses APIリクエストでは、アプリケーション状態を保存しない設定（<code>store: false</code>）を使用します。OpenAIはAPI入力・出力を既定でモデル学習に使用しないとしていますが、不正利用監視ログに入力や出力が含まれ、通常は最大30日保持される場合があります。OpenAI側の保持は同社の<a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint" target="_blank" rel="noopener">APIデータ管理方針</a>に従います。</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span>再生とAI音声</h2>
+  <p>Ropod Freeの再生にはiPhoneの内蔵読み上げ機能を使うため、無料再生のために本文をInworldへ送信しません。</p>
+  <p>有効なRopod Proサブスクリプションがある場合、生成した項目の本文、言語、音声設定をCloudflare Worker経由でInworldへ送信し、AI音声を作成します。処理の再開、待ち行列、再生、ダウンロードのため、本文のかたまり、生成途中の音声、完成音声をCloudflare R2へ一時保存します。処理途中の部品は完了時に削除され、処理・配信用ファイルは設定済みのライフサイクルにより<strong>約1日</strong>で削除されます。完成音声は端末へダウンロードされます。</p>
+  <p>AI音声の利用量は、月、匿名の購入ID、処理文字数に紐づく数値として保持し、サービス上限と不正利用防止に使います。月次利用量レコードは<strong>2暦月後</strong>に自動削除されます。</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span>広告</h2>
+  <p>Ropod Freeでは、当月の生成量が一定の区切りに達する生成の前に、Google Mobile Adsの全画面広告を表示する場合があります。Ropod Proでは広告を表示しません。</p>
+  <p>本アプリはGoogleへ<strong>非パーソナライズ広告</strong>を要求し、iOSの広告識別子（IDFA）へのアクセスを求めません。当方は本アプリの情報を、他社のアプリやWebサイトをまたぐ行動追跡のために意図的に結び付けません。ただしGoogle Mobile Adsは、広告配信、測定、セキュリティ、不正防止のため、IPアドレスから推定したおおよその位置、端末またはアプリの識別子、広告の表示・クリック、アプリ内操作、広告データ、診断情報等を処理する場合があります。</p>
+  <p>法令上必要な地域では、広告要求前にGoogleの同意フォームを表示します。Googleがプライバシー設定の再表示を求める地域では、本アプリの設定画面から選択内容を開き直せます。</p>
+</section>
+
+<section>
+  <h2><span class="num">06</span>購入と決済</h2>
+  <p>Ropod Proの決済はAppleのアプリ内課金で行われ、加入状態の管理にRevenueCatを利用します。当方および本アプリが、クレジットカード番号などの支払い情報を受け取ることはありません。AppleとRevenueCatは、購入履歴、匿名のApp User ID、ストアの国・通貨、権利状態などを各社の方針に従って処理します。</p>
+</section>
+
+<section>
+  <h2><span class="num">07</span>写真とサポート問い合わせ</h2>
 
   <h3>表紙写真</h3>
-  <p>本の表紙に写真を選んだ場合、その写真は<strong>お使いの端末内にのみ</strong>コピーされます（読み取り専用の写真アクセス）。当社サーバーへアップロードすることはありません。</p>
+  <p>アーカイブの表紙へ写真を選ぶ場合に限り、写真ライブラリへのアクセス許可を求めます。選んだ写真は本アプリの端末内領域へコピーされ、当方のサーバー、OpenAI、Inworldへアップロードしません。</p>
 
-  <h3>利用量と購入状態</h3>
-  <p>本アプリは、サービスの提供と利用上限の管理のために、当社のサーバー（Cloudflare Worker）で以下の情報のみを扱います。</p>
-  <ul>
-    <li><strong>利用量の数値</strong>（音声化した文字数など、数のみ）</li>
-    <li><strong>購入状態のフラグ</strong>（有料プランに加入しているか否か）</li>
-  </ul>
-  <p>これらは端末またはRevenueCatが生成する<strong>匿名のID</strong>に紐づき、個人を特定する情報は含みません。利用量の月次カウンターはサービスの上限管理と不正利用防止に必要な期間保持します。テキスト本文・完成音声・個人情報を、当社サーバーに継続的に保存することはありません。</p>
-
-  <h3>広告</h3>
-  <p>無料ユーザーが一定時間以上の成果物を生成する前に、Google Mobile Adsによる全画面広告を表示する場合があります。本アプリは<strong>非パーソナライズ広告のみ</strong>を要求し、IDFAへのアクセスを求めません。Googleは広告配信・測定・不正防止のため、IPアドレスから推定したおおよその位置、端末またはアプリの識別子、アプリ内操作、広告データ、診断情報を処理する場合があります。必要な地域では広告要求前にGoogleの同意フォームを表示し、設定から選択内容を開き直せます。</p>
+  <h3>サポートメール</h3>
+  <p>利用者がサポートへメールを送った場合、返信と問題解決のため、送信元メールアドレス、メール本文、添付情報を受け取ります。サポート連絡はGoogleのメールサービスを通じて処理され、対応および法的義務に必要な期間保持されます。パスワード、決済情報、APIキー、個人的・機密性の高い生成本文を送らないでください。</p>
 </section>
 
 <section>
-  <h2><span class="num">03</span>第三者への送信</h2>
-  <p>本アプリは、機能の提供のために、以下の第三者サービスへ必要なデータを送信します。各社のプライバシーポリシーが適用されます。</p>
+  <h2><span class="num">08</span>第三者サービス</h2>
+  <p>本アプリは、機能提供に必要な範囲で以下のサービスを利用します。</p>
   <table>
-    <tr><th>送信先</th><th>送信する内容</th><th>目的</th></tr>
-    <tr><td>OpenAI</td><td>入力したテーマ、チャット、構成項目</td><td>学習用文章の生成</td></tr>
-    <tr><td>Inworld</td><td>Proで音声化するテキスト</td><td>AI音声の生成</td></tr>
-    <tr><td>RevenueCat</td><td>匿名ID</td><td>有料プランの加入状態の確認</td></tr>
-    <tr><td>Apple</td><td>購入処理</td><td>App内課金の決済（支払い情報は当社・本アプリでは受け取りません）</td></tr>
-    <tr><td>Cloudflare</td><td>通信の中継・生成結果と処理用ファイルの一時保存</td><td>APIキーの保護、利用量の管理、生成の再接続、音声化の処理</td></tr>
-    <tr><td>Google Mobile Ads</td><td>おおよその位置、端末・アプリ識別子、操作、広告・診断データ等</td><td>無料版の非パーソナライズ広告、測定、不正防止</td></tr>
+    <tr><th>送信先</th><th>主なデータ</th><th>目的</th></tr>
+    <tr><td>OpenAI</td><td>キーワード、質問、チャット、構成、生成条件</td><td>関連トピック、構成、教養解説の生成</td></tr>
+    <tr><td>Inworld</td><td>Proで音声化する本文、言語、音声設定</td><td>AI音声の生成</td></tr>
+    <tr><td>Cloudflare</td><td>匿名ID、通信、生成リクエスト・結果、音声処理ファイル</td><td>API中継、認証、上限管理、再接続、待ち行列、一時保存</td></tr>
+    <tr><td>RevenueCat</td><td>匿名App User ID、購入履歴、権利状態</td><td>サブスクリプションの購入・復元・確認</td></tr>
+    <tr><td>Apple</td><td>購入およびApp Store利用情報</td><td>決済、購入管理、レビュー等</td></tr>
+    <tr><td>Google Mobile Ads</td><td>おおよその位置、端末・アプリ識別子、操作、広告・診断データ等</td><td>無料版の非パーソナライズ広告、測定、セキュリティ、不正防止</td></tr>
+    <tr><td>Google（メール）</td><td>サポートメールの送信元、本文、添付</td><td>問い合わせ対応</td></tr>
   </table>
-  <p class="muted">各社のプライバシーポリシー：
+  <p class="muted">各社の方針：
     <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI</a>・
-    <a href="https://inworld.ai/privacy-policy" target="_blank" rel="noopener">Inworld</a>・
+    <a href="https://inworld.ai/privacy" target="_blank" rel="noopener">Inworld</a>・
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>・
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>・
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>・
-    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>・
-    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>・
+    <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Googleサービス利用時のデータ処理</a>
   </p>
 </section>
 
 <section>
-  <h2><span class="num">04</span>購入と決済</h2>
-  <p>本アプリの有料プランは、Appleのアプリ内課金を通じて提供されます。決済はAppleが処理し、加入状態の管理にはRevenueCatを利用します。<strong>クレジットカード番号などの支払い情報を、本アプリおよび当社が受け取ることはありません。</strong></p>
+  <h2><span class="num">09</span>保持期間と削除</h2>
+  <ul>
+    <li><strong>端末内データ：</strong>利用者が個別に削除するか、本アプリをアンインストールするまで保存されます。アンインストールすると、端末内のメモ、会話、ファイル、設定、表紙写真、ダウンロード済み音声は削除されます。</li>
+    <li><strong>文章生成の再接続コピー：</strong>Cloudflare上で原則1時間以内に自動削除されます。</li>
+    <li><strong>AI音声の処理・配信用ファイル：</strong>処理完了時の削除および約1日のストレージライフサイクルにより削除されます。</li>
+    <li><strong>AI音声利用量：</strong>月次レコードは2暦月後に削除されます。</li>
+    <li><strong>購入情報、広告情報、AI事業者のログ、サポートメール：</strong>各事業者の方針および法的義務に従って保持されます。</li>
+  </ul>
+  <p>利用者は本アプリ内でナレッジメモやファイルを削除できます。広告の同意選択を再表示できる場合は設定から変更できます。写真へのアクセスはiOSの設定から取り消せます。サブスクリプションはApple Accountの設定から解約できます。</p>
+  <p>当方のサーバー側データは匿名IDに紐づき、氏名やメールアドレスによるアカウントを持たないため、問い合わせを受けても特定の利用者のレコードを識別できない場合があります。一時的なコンテンツコピーは上記期間後に自動削除されます。</p>
 </section>
 
 <section>
-  <h2><span class="num">05</span>お子様のプライバシー</h2>
-  <p>本アプリは、13歳未満のお子様から意図的に個人情報を収集することはありません。そもそも本アプリは個人を特定する情報を収集しません。</p>
+  <h2><span class="num">10</span>安全管理と国外処理</h2>
+  <p>通信はHTTPS等を用い、外部サービスの秘密鍵をアプリへ直接埋め込まず、Cloudflare Workerから送信します。アクセス制御、利用上限、短期チケット等を用いて保護します。ただし、インターネット通信や電子保存について絶対的な安全性を保証することはできません。</p>
+  <p>外部サービスは日本国外を含む国・地域で情報を処理する場合があります。移転先では、利用者の居住国と異なるデータ保護法が適用されることがあります。</p>
 </section>
 
 <section>
-  <h2><span class="num">06</span>データの削除</h2>
-  <p>本・項目・完成音声は端末内に保存されているため、<strong>本アプリを削除（アンインストール）すると端末内データは削除されます。</strong>再接続用の文章生成リクエストと結果は原則1時間以内、AI音声の処理用ファイルは約1日で自動削除され、通知トークンは最新登録から最大90日で失効します。匿名の利用量カウンターは上限管理と不正利用防止に必要な期間保持されます。</p>
+  <h2><span class="num">11</span>お子様のプライバシー</h2>
+  <p>本アプリは13歳未満のお子様を主な対象として設計されたものではなく、13歳未満のお子様から個人情報を意図的に収集しません。保護者がお子様に利用させる場合は、個人情報や機密情報をAIチャットへ入力しないよう監督してください。</p>
 </section>
 
 <section>
-  <h2><span class="num">07</span>本ポリシーの変更</h2>
-  <p>本ポリシーは、必要に応じて改定されることがあります。重要な変更がある場合は、本ページにて告知します。今後、当社サーバーでの情報の取り扱いに変更が生じる場合は、事前に本ポリシーを更新します。</p>
-</section>
-
-<section>
-  <h2><span class="num">08</span>お問い合わせ</h2>
-  <p>本ポリシーに関するお問い合わせは、App Storeの本アプリ紹介ページに記載のサポート連絡先までお願いいたします。</p>
-</section>
-
-<section>
-  <h2><span class="num">09</span>関連文書</h2>
-  <p>本アプリのご利用条件については、<a href="./terms.html">利用規約</a>をご確認ください。</p>
+  <h2><span class="num">12</span>変更とお問い合わせ</h2>
+  <p>本ポリシーは、機能、法令、外部サービス等の変更に応じて改定される場合があります。重要な変更は本ページへ掲載し、最終更新日を変更します。</p>
+  <p>お問い合わせ：<a href="mailto:noriphone03255@gmail.com">noriphone03255@gmail.com</a></p>
+  <p>利用条件については<a href="./terms.html">利用規約</a>、操作方法については<a href="./support.html">サポート</a>をご確認ください。</p>
 </section>
 
 <div class="divider"></div>
@@ -156,106 +191,136 @@
 <!-- ============ English ============ -->
 <div class="en" lang="en">
 <header>
-  <p class="kicker">Ropod</p>
+  <p class="kicker">Ropod AI</p>
   <h1>Privacy Policy</h1>
   <p class="updated">Last updated: September 2, 2026</p>
 </header>
 
 <section>
-  <p>This Privacy Policy explains how Ropod ("the App") handles your information. The App helps you create a learning script with AI from a topic you are curious about and listen to it.</p>
-  <p><strong>In short: the App does not intentionally collect direct identifiers such as your name, email, or phone number, and no account is required. Your books, items, and completed audio are stored on your device. Only the data needed for script generation, Pro AI audio, and Free-plan advertising is sent to the processors listed below.</strong></p>
+  <p>This Privacy Policy explains how Ropod AI (“the App”) handles information. The App turns keywords and questions into AI-generated educational explanations you can listen to.</p>
+  <p><strong>In short: no account is required. The App does not ask you to enter your name, email address, or phone number in the App, and we do not intentionally collect direct identifiers. Permanent Knowledge Memos, chats, files, settings, and completed audio are stored on your device. Information needed for text generation, Pro AI voice, subscription verification, and Free-plan ads is processed by the services listed below.</strong></p>
 </section>
 
 <section>
-  <h2><span class="num">01</span>Information We Do Not Collect</h2>
-  <p>The App does <strong>not</strong> collect:</p>
+  <h2><span class="num">01</span>Information Stored on Your Device</h2>
+  <p>The App stores the following on your device:</p>
   <ul>
-    <li>Personally identifying information (name, email, phone number, address)</li>
-    <li>Precise location or contacts</li>
-    <li>Advertising identifiers (IDFA). Because the App does not track you, it does not show an App Tracking Transparency (ATT) prompt.</li>
+    <li>Knowledge Memos, related topics, and AI Chat history</li>
+    <li>Generated files and items, their order, and Archive organization</li>
+    <li>Downloaded completed audio and playback state</li>
+    <li>App settings such as language, ad checkpoints, and review-request timing</li>
+    <li>An optional Archive cover photo you choose or a built-in cover illustration</li>
   </ul>
-  <p class="muted">Note: The App accesses your photo library (read-only) only when you choose a photo as a book cover. The chosen photo is copied only on your device and is never uploaded to our servers (see 02 below).</p>
+  <p>We do not sync these items to our servers as a permanent library. The App does not provide account-based cloud sync or backup.</p>
 </section>
 
 <section>
-  <h2><span class="num">02</span>Information the App Handles</h2>
+  <h2><span class="num">02</span>Identifiers and Network Information</h2>
 
-  <h3>Learning-script generation</h3>
-  <p>The topics you enter, your AI-chat content, and the outline items you select are sent through our Cloudflare Worker to OpenAI solely to return the requested learning script. To prevent duplicate generation when you briefly leave the App and to return the same result after reconnection, a generation request and its result are linked to an anonymous ID and a per-request random ID and <strong>temporarily stored on Cloudflare, normally for no longer than one hour</strong>. Your permanent library of completed books and items is stored <strong>on your device</strong> in a local database. We do not operate a permanent server-side library of your content; the Cloudflare copies are retained temporarily only for reconnection processing.</p>
+  <h3>Anonymous device identifier</h3>
+  <p>For service limits, abuse prevention, and request ownership, the App creates a random anonymous ID on the device and sends it to our Cloudflare Worker. It is not linked to your name or email and is not an advertising identifier.</p>
 
-  <h3>Playback and AI audio</h3>
-  <p>Free playback uses the iPhone's on-device speech engine, so the script is not sent to Inworld for Free playback. With Ropod Pro, each generated item is automatically sent through our Cloudflare Worker to Inworld to create AI audio. During processing, text chunks and in-progress audio parts may be <strong>temporarily stored</strong> on Cloudflare R2 so a long job can resume. These job files are <strong>automatically deleted after about one day</strong>, and completed audio is downloaded to your device.</p>
+  <h3>Anonymous purchase identifier</h3>
+  <p>Because the App has no account registration, RevenueCat creates a random anonymous App User ID to manage subscription purchase, restoration, and entitlement status. RevenueCat and our Cloudflare Worker process this ID and purchase or entitlement status.</p>
+
+  <h3>Network information</h3>
+  <p>As part of internet communications, processors such as Cloudflare, OpenAI, Inworld, RevenueCat, and Google may process IP addresses, timestamps, device and app information, request outcomes, and diagnostics. Their processing is governed by their own terms and privacy policies.</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>AI Text Generation</h2>
+  <p>We send the information needed to return the requested result through our Cloudflare Worker to OpenAI. This may include your keyword, question, AI Chat history, selected related topics, outline, difficulty, and length. Saved interests are not automatically sent into a new AI Chat. However, the unselected recommendation view in Discover may send locally stored interests and recent questions to create related-topic recommendations.</p>
+  <p>To avoid duplicate generation when you change screens or briefly lose connectivity, and to return the same result after reconnection, a generation request and result are linked to an anonymous ID and per-request random ID and <strong>temporarily stored on Cloudflare, normally for no longer than one hour</strong>.</p>
+  <p>Requests to OpenAI's Responses API use <code>store: false</code>, which asks OpenAI not to store application state. OpenAI states that API inputs and outputs are not used to train its models by default, but abuse-monitoring logs may include inputs and outputs and are normally retained for up to 30 days. OpenAI retention is governed by its <a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint" target="_blank" rel="noopener">API data controls</a>.</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Playback and AI Voice</h2>
+  <p>Ropod Free uses the iPhone's built-in speech engine, so text is not sent to Inworld for Free playback.</p>
+  <p>With an active Ropod Pro subscription, the App sends each generated item's text, language, and voice settings through our Cloudflare Worker to Inworld to create AI audio. To resume processing, manage queues, play, and download audio, text chunks, in-progress audio, and completed audio are temporarily stored in Cloudflare R2. Intermediate parts are deleted during completion, and processing or delivery files are deleted by the configured storage lifecycle after <strong>approximately one day</strong>. Completed audio is downloaded to your device.</p>
+  <p>AI-voice usage is stored as numerical counts linked to the month, anonymous purchase ID, and processed character count, for service limits and abuse prevention. Monthly usage records are automatically deleted after <strong>two calendar months</strong>.</p>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Advertising</h2>
+  <p>On Ropod Free, a full-screen Google Mobile Ads ad may appear before a generation that crosses a monthly usage checkpoint. Ropod Pro has no ads.</p>
+  <p>The App requests <strong>non-personalized ads</strong> and does not request access to Apple's advertising identifier (IDFA). We do not intentionally combine App information to track you across other companies' apps or websites. Google Mobile Ads may nevertheless process approximate location derived from an IP address, device or app identifiers, ad views and clicks, product interactions, advertising data, and diagnostics for ad delivery, measurement, security, and fraud prevention.</p>
+  <p>Where legally required, Google's consent form is shown before an ad request. In regions where Google requires privacy choices to remain available, you can reopen the form from App Settings.</p>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Purchases and Payment</h2>
+  <p>Ropod Pro payments are processed by Apple's in-app purchase system, and RevenueCat manages subscription status. Neither the App nor we receive payment details such as credit card numbers. Apple and RevenueCat process purchase history, the anonymous App User ID, storefront country and currency, and entitlement status under their policies.</p>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Photos and Support Requests</h2>
 
   <h3>Cover photos</h3>
-  <p>If you choose a photo as a book cover, it is copied <strong>only on your device</strong> (read-only photo access). Cover photos are never uploaded to our servers.</p>
+  <p>The App asks for photo-library permission only if you choose a photo as an Archive cover. The selected photo is copied to the App's on-device storage and is not uploaded to our servers, OpenAI, or Inworld.</p>
 
-  <h3>Usage and purchase status</h3>
-  <p>To provide the service and enforce usage limits, our server (a Cloudflare Worker) handles only:</p>
-  <ul>
-    <li><strong>Usage counts</strong> (such as the number of characters synthesized — numbers only)</li>
-    <li><strong>A purchase-status flag</strong> (whether you have an active paid plan)</li>
-  </ul>
-  <p>These are tied to an <strong>anonymous ID</strong> generated by the device or RevenueCat and contain no personally identifying information. Monthly usage counters are retained for as long as needed to operate service limits and prevent abuse. Your script text, completed audio, and personal information are not stored on our servers on an ongoing basis.</p>
-
-  <h3>Advertising</h3>
-  <p>Free users may see a full-screen Google Mobile Ads ad before some longer generations. The App requests <strong>non-personalized ads only</strong> and does not request IDFA access. Google may process approximate location derived from an IP address, device or app identifiers, product interactions, advertising data, and diagnostics to deliver and measure ads and prevent fraud. Where required, Google's consent form is shown before an ad request and can be reopened from Settings.</p>
+  <h3>Support email</h3>
+  <p>If you email support, we receive your sender email address, message, and attachments to respond and troubleshoot. Support communication is processed through Google's email service and retained as needed for support and legal obligations. Do not send passwords, payment details, API keys, or private or sensitive generated content.</p>
 </section>
 
 <section>
-  <h2><span class="num">03</span>Data Sent to Third Parties</h2>
-  <p>To provide its features, the App sends the necessary data to the following third-party services, each governed by its own privacy policy:</p>
+  <h2><span class="num">08</span>Third-Party Services</h2>
+  <p>The App uses the following services as needed to provide features:</p>
   <table>
-    <tr><th>Recipient</th><th>Data sent</th><th>Purpose</th></tr>
-    <tr><td>OpenAI</td><td>Topics, chat content, and selected outline items</td><td>Generating learning scripts</td></tr>
-    <tr><td>Inworld</td><td>Text synthesized for Pro users</td><td>Creating AI audio</td></tr>
-    <tr><td>RevenueCat</td><td>Anonymous ID</td><td>Checking paid-plan status</td></tr>
-    <tr><td>Apple</td><td>Purchase processing</td><td>In-app purchases (we never receive payment details)</td></tr>
-    <tr><td>Cloudflare</td><td>Request relay and temporary generation-result/job storage</td><td>Protecting API keys, managing usage, reconnecting generation, and processing audio</td></tr>
-    <tr><td>Google Mobile Ads</td><td>Approximate location, device/app identifiers, interactions, advertising data, and diagnostics</td><td>Non-personalized Free-plan ads, measurement, and fraud prevention</td></tr>
+    <tr><th>Recipient</th><th>Main data</th><th>Purpose</th></tr>
+    <tr><td>OpenAI</td><td>Keywords, questions, chat, outline, and generation settings</td><td>Related topics, outlines, and educational explanations</td></tr>
+    <tr><td>Inworld</td><td>Pro text, language, and voice settings</td><td>AI voice generation</td></tr>
+    <tr><td>Cloudflare</td><td>Anonymous IDs, network requests, generation requests/results, and audio processing files</td><td>API proxy, authentication, limits, reconnection, queueing, and temporary storage</td></tr>
+    <tr><td>RevenueCat</td><td>Anonymous App User ID, purchase history, and entitlement status</td><td>Subscription purchase, restoration, and verification</td></tr>
+    <tr><td>Apple</td><td>Purchase and App Store usage information</td><td>Payment, purchase management, reviews, and related App Store services</td></tr>
+    <tr><td>Google Mobile Ads</td><td>Approximate location, device or app identifiers, interactions, advertising data, and diagnostics</td><td>Non-personalized Free-plan ads, measurement, security, and fraud prevention</td></tr>
+    <tr><td>Google (email)</td><td>Support sender, message, and attachments</td><td>Support communication</td></tr>
   </table>
-  <p class="muted">Third-party privacy policies:
+  <p class="muted">Provider policies:
     <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI</a>,
-    <a href="https://inworld.ai/privacy-policy" target="_blank" rel="noopener">Inworld</a>,
+    <a href="https://inworld.ai/privacy" target="_blank" rel="noopener">Inworld</a>,
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>,
     <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a>,
     <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a>,
-    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>,
-    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a>, and
+    <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google data use on partner apps and sites</a>
   </p>
 </section>
 
 <section>
-  <h2><span class="num">04</span>Purchases and Payment</h2>
-  <p>Paid plans are offered through Apple's in-app purchase system. Apple processes payment, and RevenueCat manages subscription status. <strong>Neither the App nor we ever receive your payment details, such as credit card numbers.</strong></p>
+  <h2><span class="num">09</span>Retention and Deletion</h2>
+  <ul>
+    <li><strong>On-device data:</strong> kept until you delete it or uninstall the App. Uninstalling removes local memos, chats, files, settings, cover photos, and downloaded audio.</li>
+    <li><strong>Text-generation reconnection copies:</strong> normally deleted from Cloudflare within one hour.</li>
+    <li><strong>AI-audio processing and delivery files:</strong> deleted during completion and through an approximately one-day storage lifecycle.</li>
+    <li><strong>AI-voice usage:</strong> monthly records are deleted after two calendar months.</li>
+    <li><strong>Purchases, ads, AI-provider logs, and support email:</strong> retained under the relevant provider's policy and legal obligations.</li>
+  </ul>
+  <p>You can delete Knowledge Memos and files in the App. Where available, reopen ad-consent choices from Settings. Revoke photo access in iOS Settings. Cancel the subscription in your Apple Account settings.</p>
+  <p>Server-side records use anonymous IDs and we do not have a name- or email-based App account, so we may be unable to identify a particular user's record in response to a request. Temporary content copies expire automatically as described above.</p>
 </section>
 
 <section>
-  <h2><span class="num">05</span>Children's Privacy</h2>
-  <p>The App does not knowingly collect personal information from children under 13. The App does not collect personally identifying information from anyone.</p>
+  <h2><span class="num">10</span>Security and International Processing</h2>
+  <p>We use HTTPS and related protections, keep external-service secret keys out of the App, and route them through a Cloudflare Worker. We use access controls, service limits, and short-lived tickets. However, no internet transmission or electronic storage is guaranteed to be completely secure.</p>
+  <p>Providers may process information in countries or regions outside Japan, where data-protection laws may differ from those in your country of residence.</p>
 </section>
 
 <section>
-  <h2><span class="num">06</span>Deleting Your Data</h2>
-  <p>Because books, items, and completed audio are stored on your device, <strong>deleting (uninstalling) the App removes that on-device data.</strong> Reconnection copies of generation requests and results are normally deleted within one hour, AI-audio job files are automatically deleted after about one day, and notification tokens expire no later than 90 days after the latest registration. Anonymous usage counters are retained for as long as needed to operate limits and prevent abuse.</p>
+  <h2><span class="num">11</span>Children's Privacy</h2>
+  <p>The App is not designed primarily for children under 13 and does not knowingly collect personal information from children under 13. If a parent or guardian allows a child to use the App, please supervise them so they do not enter personal or confidential information into AI Chat.</p>
 </section>
 
 <section>
-  <h2><span class="num">07</span>Changes to This Policy</h2>
-  <p>We may update this policy as needed. We will post material changes on this page. If our server-side handling of information ever changes, we will update this policy in advance.</p>
-</section>
-
-<section>
-  <h2><span class="num">08</span>Contact</h2>
-  <p>For questions about this policy, please use the support contact listed on the App's App Store page.</p>
-</section>
-
-<section>
-  <h2><span class="num">09</span>Related Documents</h2>
-  <p>For the terms governing your use of the App, please see the <a href="./terms.html">Terms of Use</a>.</p>
+  <h2><span class="num">12</span>Changes and Contact</h2>
+  <p>We may update this policy when features, laws, or external services change. Material changes will be posted on this page with a revised date.</p>
+  <p>Contact: <a href="mailto:noriphone03255@gmail.com">noriphone03255@gmail.com</a></p>
+  <p>See the <a href="./terms.html">Terms of Use</a> for usage conditions and <a href="./support.html">Support</a> for help.</p>
 </section>
 </div>
 
 <footer>
-  Ropod — Privacy Policy / プライバシーポリシー
+  Ropod AI — Privacy Policy / プライバシーポリシー
 </footer>
 
 </div>

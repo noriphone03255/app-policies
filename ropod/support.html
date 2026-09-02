@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ropod サポート / Support</title>
+<title>Ropod AI サポート / Support</title>
 <style>
   :root { --ink:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea; --accent:#5b4bdb; --bg:#ffffff; }
   * { box-sizing: border-box; }
@@ -15,10 +15,13 @@
   h1 { font-size:28px; margin:6px 0 4px; }
   .updated { color:var(--muted); font-size:13px; margin-bottom:28px; }
   h2 { font-size:19px; margin:34px 0 10px; padding-top:18px; border-top:1px solid var(--line); }
+  h3 { font-size:16px; margin:24px 0 8px; }
   p, li { font-size:15.5px; }
+  ol, ul { padding-left:22px; }
+  li { margin-bottom:6px; }
   a { color:var(--accent); text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .contact { background:#f6f5ff; border:1px solid #e6e3ff; border-radius:12px; padding:16px 18px; margin:14px 0; }
+  .contact, .note { background:#f6f5ff; border:1px solid #e6e3ff; border-radius:12px; padding:16px 18px; margin:14px 0; }
   .contact a { font-weight:600; }
   .muted { color:var(--muted); }
   .divider { margin:48px 0; border:0; border-top:1px solid var(--line); }
@@ -28,86 +31,145 @@
 <body>
 <div class="wrap">
 
-  <div class="brand">Ropod</div>
+  <div class="brand">Ropod AI</div>
   <h1>サポート</h1>
-  <div class="updated">最終更新日：2026年6月23日</div>
+  <div class="updated">最終更新日：2026年9月2日</div>
 
-  <p>Ropod は、自分用のポッドキャスト台本を書いて（またはAIに作らせて）、高品質なAI音声で読み上げ、"ながら聞き"できるアプリです。ご不明な点やご要望は、お気軽にお問い合わせください。</p>
+  <p>Ropod AIは、気になるキーワードや疑問から、AIと構成を整え、わかりやすい「自分だけの教養ラジオ」を作って聞くためのアプリです。</p>
 
   <div class="contact">
     お問い合わせ：<a href="mailto:noriphone03255@gmail.com">noriphone03255@gmail.com</a><br>
-    <span class="muted">お問い合わせには順次対応しております。返信までお時間をいただく場合があります。アプリ名「Ropod」と、お使いのiOSバージョン・端末名を記載いただけるとスムーズです。</span>
+    <span class="muted">「Ropod AI」、アプリのバージョン、iOSのバージョン、端末名、問題が起きるまでの操作、表示されたエラーを記載してください。通常、順次返信しますが、数日かかる場合があります。APIキー、パスワード、決済情報、個人的・機密性の高い本文は送らないでください。</span>
   </div>
+
+  <h2>基本的な使い方</h2>
+  <ol>
+    <li>「発見」で知りたいキーワードをメモし、関連する人物・場所・出来事などをグラフから選びます。または「AIチャット」へ質問を入力します。</li>
+    <li>AIが提案した構成を確認し、項目の追加・削除・並べ替えを行います。1つの成果物につき最大12項目です。</li>
+    <li>難易度と全体の長さを選び、項目ごとに教養解説を生成します。</li>
+    <li>完成した内容は「ファイル」へ保存されます。各項目のイヤホンボタンから再生し、「アーカイブ」でフォルダに整理できます。</li>
+  </ol>
 
   <h2>よくある質問</h2>
 
-  <p><strong>Q. 使い方は？</strong><br>
-  ①台本を書く（メモのように自由に。AIアシスタントに下書きを頼むこともできます）→ ②「音声化」ボタンで高品質AI音声に変換 → ③再生して"ながら聞き"。フォルダにまとめると連続再生できます。</p>
+  <h3>無料版では何ができますか？</h3>
+  <p>Ropod Freeでは、1つの成果物を最大30分の設定で生成できます。再生にはiPhoneの内蔵音声を使い、アプリを前面で開いている間に聞けます。無料版には生成量に応じた全画面広告があります。</p>
 
-  <p><strong>Q. 無料でどこまで使えますか？</strong><br>
-  無料プランでは音声化が月8,000字まで可能です。</p>
+  <h3>Ropod Proとは何ですか？</h3>
+  <p>Ropod Proは月額の自動更新サブスクリプションです。1つの成果物を最大60分の設定で生成でき、各項目の高品質AI音声を自動作成します。広告は表示されず、画面を閉じた状態でのバックグラウンド再生とロック画面からの操作も利用できます。価格はApp Storeの購入画面に表示される地域別の金額が適用されます。</p>
 
-  <p><strong>Q. 有料プラン（Light）は？</strong><br>
-  Light（月額）は音声化の上限を月120,000字に引き上げます。料金・内容はアプリ内の購入画面に表示されます。</p>
+  <h3>設定した分数と実際の再生時間が違います</h3>
+  <p>30分・60分などの分数は、生成する文章量から計算した目安です。言語、音声、読み方、句読点などによって実際の再生時間は前後します。</p>
 
-  <p><strong>Q. 解約方法は？</strong><br>
-  iPhoneの「設定」→ 一番上のApple ID →「サブスクリプション」から Ropod を選び、解約できます。現在の期間の終了24時間前までに自動更新をオフにすると、次回更新されません。</p>
+  <h3>広告はいつ表示されますか？</h3>
+  <p>Ropod Freeでは、当月の生成量が一定の区切りに達する生成の前に、Google Mobile Adsの全画面広告を表示する場合があります。広告を読み込めない場合でも、生成そのものは継続できる設計です。Ropod Proでは広告を表示しません。</p>
 
-  <p><strong>Q. 返金してほしい</strong><br>
-  App Storeでの購入の返金は Apple が管理しています。<a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a> からお手続きください。</p>
+  <h3>生成に失敗する、または時間がかかります</h3>
+  <ul>
+    <li>通信状態を確認し、アプリを最新版へ更新してから再度お試しください。</li>
+    <li>長い成果物は項目ごとに順番に生成するため、完了まで時間がかかります。成功した項目は途中経過としてファイルへ保存される場合があります。</li>
+    <li>広告を閉じた直後、画面ロック後、外部AIサービスの混雑時は、復帰や再接続に少し時間がかかることがあります。</li>
+  </ul>
 
-  <p><strong>Q. 上限に達しました</strong><br>
-  音声化の文字数上限は毎月リセットされます。今月分をもっと使いたい場合は Light へのアップグレードをご検討ください。</p>
+  <h3>ProなのにAI音声がすぐ再生されません</h3>
+  <p>AI音声は項目ごとに順番待ちで作成されます。まだ完成していない項目を再生した場合は、その場で音声生成を試します。準備に時間がかかる場合や生成に失敗した場合、その項目だけiPhoneの内蔵音声へ切り替わることがあります。次の項目ではAI音声を再試行します。</p>
 
-  <p><strong>Q. データの扱いは？</strong><br>
-  Ropod はアカウント登録不要・広告なし・トラッキングなしです。台本テキストと音声は端末内のみに保存され、サーバーには保存されません。詳しくは<a href="https://noriphone03255.github.io/app-policies/ropod/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  <h3>バックグラウンド再生やロック画面操作ができません</h3>
+  <p>バックグラウンド再生とロック画面操作はRopod Proの機能です。無料版はアプリが前面を離れると現在位置を保持して一時停止します。Proで動作しない場合は、購入状態を復元し、音声を再生してからもう一度画面を閉じてください。</p>
+
+  <h3>購入を復元したい</h3>
+  <p>Ropodの「設定」→「購入を復元」を選び、購入時と同じApple Accountでお試しください。アカウント登録は不要です。</p>
+
+  <h3>解約方法は？</h3>
+  <p>iPhoneの「設定」→ 自分の名前 →「サブスクリプション」→ Ropodを選び、解約できます。現在の期間が終了する24時間前までに自動更新をオフにしない場合、次回分が自動更新されます。</p>
+
+  <h3>返金を申請したい</h3>
+  <p>App Storeでの購入と返金はAppleが管理しています。<a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>から申請してください。</p>
+
+  <h3>ファイルやメモを削除したい</h3>
+  <p>ファイルカードを左へスワイプすると削除できます。ナレッジメモは発見画面から削除できます。恒久的なライブラリは端末内に保存されるため、アプリを削除すると端末内のメモ、会話、ファイル、設定、ダウンロード済み音声も削除されます。クラウド同期やアカウントによる復元はありません。</p>
+
+  <h3>AIの解説は正確ですか？</h3>
+  <p>AIが生成した内容には、誤り、古い情報、不正確な出典が含まれる可能性があります。重要な判断、医療・法律・金融など専門的な用途にはそのまま使用せず、信頼できる資料で確認してください。</p>
+
+  <h3>データはどのように扱われますか？</h3>
+  <p>アカウント登録は不要です。恒久的なメモ、会話、ファイル、完成音声は端末内に保存されます。文章生成とProのAI音声では、処理に必要な内容をCloudflare経由でOpenAIまたはInworldへ送信し、一時的な処理コピーを保持する場合があります。無料版の広告にはGoogle Mobile Adsを使用します。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご覧ください。</p>
 
   <h2>関連リンク</h2>
-  <p>
-    <a href="https://noriphone03255.github.io/app-policies/ropod/privacy.html">プライバシーポリシー</a> ・
-    <a href="https://noriphone03255.github.io/app-policies/ropod/terms.html">利用規約</a>
-  </p>
+  <p><a href="./privacy.html">プライバシーポリシー</a> ・ <a href="./terms.html">利用規約</a></p>
 
   <hr class="divider">
 
-  <div class="brand">Ropod</div>
-  <h1>Support</h1>
-  <div class="updated">Last updated: June 23, 2026</div>
+  <div lang="en">
+    <div class="brand">Ropod AI</div>
+    <h1>Support</h1>
+    <div class="updated">Last updated: September 2, 2026</div>
 
-  <p>Ropod lets you write (or have AI draft) your own podcast script, read it aloud with a high-quality AI voice, and listen on the go. If you have any questions or feedback, please reach out.</p>
+    <p>Ropod AI turns a keyword or question into a structured, approachable learning-radio program you can listen to.</p>
 
-  <div class="contact">
-    Contact: <a href="mailto:noriphone03255@gmail.com">noriphone03255@gmail.com</a><br>
-    <span class="muted">We respond as soon as we can; replies may take a few days. Please include "Ropod," your iOS version, and device model to help us assist you faster.</span>
+    <div class="contact">
+      Contact: <a href="mailto:noriphone03255@gmail.com">noriphone03255@gmail.com</a><br>
+      <span class="muted">Include “Ropod AI,” the app version, iOS version, device model, steps that caused the issue, and any error shown. Replies may take a few days. Do not send API keys, passwords, payment details, or private or sensitive script content.</span>
+    </div>
+
+    <h2>Getting started</h2>
+    <ol>
+      <li>Save a keyword in Discover and choose a related person, place, event, or other node, or enter a question in AI Chat.</li>
+      <li>Review the proposed outline, then add, remove, or reorder items. A program can contain up to 12 items.</li>
+      <li>Choose a difficulty and total length, then generate the explanations item by item.</li>
+      <li>The result is saved in Files. Play each item with its headphone button and organize files into folders in Archive.</li>
+    </ol>
+
+    <h2>FAQ</h2>
+
+    <h3>What is included with Ropod Free?</h3>
+    <p>Ropod Free can generate one program with a target length of up to 30 minutes. It uses the iPhone's built-in voice and plays while the App remains in the foreground. Full-screen ads may appear based on generation usage.</p>
+
+    <h3>What is Ropod Pro?</h3>
+    <p>Ropod Pro is a monthly auto-renewing subscription. It increases the target length of one program to 60 minutes, automatically creates high-quality AI voice for each item, removes ads, and adds background playback and Lock Screen controls. The localized price shown on the App Store purchase screen applies.</p>
+
+    <h3>Why does playback time differ from the selected length?</h3>
+    <p>The selected time is an estimate based on generated text length. Actual playback varies with language, voice, pronunciation, and punctuation.</p>
+
+    <h3>When are ads shown?</h3>
+    <p>On Ropod Free, a Google Mobile Ads full-screen ad may appear before a generation that crosses a monthly usage checkpoint. Generation continues if an ad is unavailable. Ropod Pro has no ads.</p>
+
+    <h3>Generation failed or is taking a long time</h3>
+    <ul>
+      <li>Check your connection and update Ropod to the latest version before retrying.</li>
+      <li>Long programs are generated item by item and can take time. Completed items may remain saved as a partial file.</li>
+      <li>Returning from an ad, unlocking the device, or temporary congestion at an AI provider can delay reconnection.</li>
+    </ul>
+
+    <h3>Why is Pro AI voice not ready immediately?</h3>
+    <p>AI voice is queued item by item. If the selected item is not ready, Ropod tries to generate it for immediate playback. If preparation takes too long or fails, that item may temporarily use the iPhone voice. Ropod tries AI voice again for the next item.</p>
+
+    <h3>Background playback or Lock Screen controls do not work</h3>
+    <p>These are Ropod Pro features. Ropod Free pauses and preserves the current position when the App leaves the foreground. On Pro, restore the purchase if needed, start playback, then try leaving the App again.</p>
+
+    <h3>How do I restore a purchase?</h3>
+    <p>Open Ropod Settings and choose Restore Purchases while signed in to the Apple Account used for the purchase. No Ropod account is required.</p>
+
+    <h3>How do I cancel?</h3>
+    <p>On iPhone, open Settings → your name → Subscriptions → Ropod. Turn off auto-renew at least 24 hours before the end of the current period to avoid the next renewal.</p>
+
+    <h3>How do I request a refund?</h3>
+    <p>Apple manages App Store payments and refunds. Request one at <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+    <h3>How do I delete my files or memos?</h3>
+    <p>Swipe a file card to the left to delete it. Delete Knowledge Memos from Discover. The permanent library is stored on your device, so uninstalling the App removes local memos, chats, files, settings, and downloaded audio. There is no account-based cloud sync or restore.</p>
+
+    <h3>Is AI-generated content always accurate?</h3>
+    <p>No. AI output may contain errors, outdated information, or inaccurate sources. Verify important information with reliable sources, especially for medical, legal, financial, or other professional decisions.</p>
+
+    <h3>How is my data handled?</h3>
+    <p>No account is required. Permanent memos, chats, files, and completed audio are stored on your device. Text generation and Pro AI voice send the content required for processing through Cloudflare to OpenAI or Inworld and may use temporary processing copies. Ropod Free uses Google Mobile Ads. See the <a href="./privacy.html">Privacy Policy</a> for details.</p>
+
+    <h2>Links</h2>
+    <p><a href="./privacy.html">Privacy Policy</a> · <a href="./terms.html">Terms of Use</a></p>
   </div>
 
-  <h2>FAQ</h2>
-
-  <p><strong>Q. How do I use it?</strong><br>
-  1) Write a script (freely, like notes - or ask the AI assistant to draft one). 2) Tap "Convert to audio" to turn it into a high-quality AI voice. 3) Play it back and listen on the go. Group pages into a folder for continuous playback.</p>
-
-  <p><strong>Q. What can I do for free?</strong><br>
-  The free plan lets you synthesize up to 8,000 characters of audio per month.</p>
-
-  <p><strong>Q. What is the paid plan (Light)?</strong><br>
-  Light (monthly) raises the audio limit to 120,000 characters per month. Pricing and details appear on the in-app purchase screen.</p>
-
-  <p><strong>Q. How do I cancel?</strong><br>
-  On your iPhone, open Settings → your Apple ID at the top → Subscriptions → Ropod, and cancel there. Turn off auto-renew at least 24 hours before the current period ends to avoid the next renewal.</p>
-
-  <p><strong>Q. I'd like a refund</strong><br>
-  Refunds for App Store purchases are handled by Apple. Please request one at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</p>
-
-  <p><strong>Q. How is my data handled?</strong><br>
-  Ropod requires no account, shows no ads, and does no tracking. Your scripts and audio are stored only on your device, not on our servers. See our <a href="https://noriphone03255.github.io/app-policies/ropod/privacy.html">Privacy Policy</a> for details.</p>
-
-  <h2>Links</h2>
-  <p>
-    <a href="https://noriphone03255.github.io/app-policies/ropod/privacy.html">Privacy Policy</a> ·
-    <a href="https://noriphone03255.github.io/app-policies/ropod/terms.html">Terms of Use</a>
-  </p>
-
-  <footer>© 2026 Ropod</footer>
+  <footer>© 2026 Ropod AI</footer>
 
 </div>
 </body>
