@@ -231,7 +231,7 @@
 
   <h3>App Attest security identifiers</h3>
   <p>We use Apple App Attest to help verify that API requests come from a genuine copy of Ropod running on a genuine Apple device. The App Attest private key remains in the device's Secure Enclave and is never sent to us, Cloudflare, or any other service.</p>
-  <p>To prevent API abuse, detect replay, and enforce usage limits, our Cloudflare Worker processes and stores the App Attest key ID, public key, attestation receipt, latest assertion counter, and app environment and build information. The anonymous App ID and RevenueCat App User ID are converted to one-way hashes and bound to this key record. We do not use this information for advertising, ad tracking, or user profiling.</p>
+  <p>To prevent API abuse, detect replay, and enforce usage limits, our Cloudflare Worker processes and stores the App Attest key ID, public key, attestation receipt, latest assertion counter, and app environment and build information. The app's anonymous user ID and RevenueCat App User ID are converted to one-way hashes and bound to this key record. We do not use this information for advertising, ad tracking, or user profiling.</p>
   <p>An App Attest challenge expires after five minutes, and an authenticated API session expires after fifteen minutes. The server-side key record is retained only for as long as reasonably necessary for app security and abuse prevention.</p>
 
   <h3>Network information</h3>
